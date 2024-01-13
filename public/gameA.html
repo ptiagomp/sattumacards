@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kortin Keskustelu</title>
+    <link rel="stylesheet" href="gameA.css">
+</head>
+<body>
+    <!-- Deck Container -->
+    <div class="deck-container">
+        <div class="deck" id="deck1"></div>
+        <div class="deck" id="deck0"></div>
+        <div class="deck" id="deck5"></div>
+        <div class="deck" id="deck3"></div>
+        <div class="deck" id="deck4"></div>
+        <div class="deck" id="deck2"></div>
+    </div>
+
+    <!-- Dropzone Container -->
+    <div class="dropzone-container">
+        <div class="dropzone" id="dropzone1"></div>
+        <div class="dropzone" id="dropzone0"></div>
+        <div class="dropzone" id="dropzone5"></div>
+        <div class="dropzone" id="dropzone3"></div>
+        <div class="dropzone" id="dropzone4"></div>
+        <div class="dropzone" id="dropzone2"></div>
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-container">
+        <button id="resetBtn" title="Resetoi ja sekoita kortit.">Uudet Kortit</button>
+        <button id="autoPlaceBtn" title="Aseta kortit automaattisesti niiden pudotusalueille.">Aseta Kortit</button>
+        <button id="flipAllBtn" title="Kääntää kaikki kortit paljastaen niiden sisällön.">Käännä Kortit</button>
+        <button id="homeBtn" title="Palaa päävalikkoon." onclick="window.location.href='index.html';">
+            <span class="home-icon">&#8962;</span>
+        </button>
+        <select id="backgroundColorSelector" title="Change Background Color">
+            <option value="default">Default</option>
+            <option value="purple">Purple</option>
+            <option value="candypink">Candy Pink</option>
+            <option value="softplum">Soft Plum</option>
+            <option value="softlavender">Soft Lavender</option>
+            <option value="seagreen">Sea Green</option>
+            <!-- Gradients -->
+            <option value="ocean">Ocean</option>
+            <option value="bloodorange">Blood Orange</option>
+            <option value="antarctica">Antarctica</option>
+            <option value="dusk">Dusk</option>
+            <option value="negative">Negative Effect</option>
+        </select>
+        <button id="infoBtn" title="Game Instructions">&#9432;</button> <!-- Info icon -->
+    </div>
+
+    <!-- Info Popup Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Game Instructions</h3>
+            <p>The place to write instructions for this game.</p>
+            <!-- Add your game instructions here -->
+        </div>
+    </div>
+
+    <!-- Player List and Game Console Container -->
+    <div class="info-console-container">
+        <div class="game-info-container">
+            <div class="game-id-section">
+                <div id="gameIdDisplay">Pelin ID: </div>
+            </div>
+            <ul id="playersList">
+                <p>Pelissa:</p>
+                <!-- Players will be listed here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="gameA.js"></script>
+</body>
+</html>

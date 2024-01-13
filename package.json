@@ -1,0 +1,23 @@
+{
+  "name": "cardtestweb1",
+  "version": "1.0.0",
+  "description": "card game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:api": "node server.js",
+    "dev:client": "npm start",
+    "dev": "npm run dev:api && npm run dev:client"
+  },
+  "keywords": [],
+  "author": "Tiago Martins Pinto",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "engines": {
+    "node": "16.20.2"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kortin Keskustelu</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main class="landing-container">
+        <!-- Main Logo -->
+        <img src="./imgs/keskustelu-logo.png" alt="Keskustelu Logo" class="main-logo">
+
+        <!-- Title -->
+        <h1>Tervetuloa<br>Kortin Keskustelu</h1>
+
+        <!-- Create New Game Button -->
+        <div class="button-container">
+            <button id="createGameBtn" onclick="navigate('gameA.html')">Uusi Peli</button>
+        </div>
+
+        <!-- Join Game Section -->
+        <div class="join-game-container">
+            <button id="joinGameBtn">Liity Peliin</button>
+            <input type="text" id="joinGameInput" placeholder="Kirjoita Pelin ID">
+        </div>
+    </main>
+
+    <footer class="logo-container">
+        <img src="./imgs/aalto-logo.png" alt="Aalto Logo" class="logo">
+        <img src="./imgs/kuvataide-logo.png" alt="Kuvataide Logo" class="logo">
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
