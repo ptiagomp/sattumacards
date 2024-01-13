@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // DOM Elements
 const decks = document.querySelectorAll('.deck');
 const resetBtn = document.getElementById('resetBtn');
-const autoPlaceBtn = document.getElementById('autoPlaceBtn');
-const flipAllBtn = document.getElementById('flipAllBtn');
+//const autoPlaceBtn = document.getElementById('autoPlaceBtn');
+//const flipAllBtn = document.getElementById('flipAllBtn');
 const dropzones = document.querySelectorAll('.dropzone');
 
 // Data Definitions
@@ -49,12 +49,12 @@ function clearGameConsole() {
 }
 
 // Function to set up the clear console button
-function setupClearConsoleButton() {
-    const clearConsoleBtn = document.getElementById('clearConsoleBtn');
-    clearConsoleBtn.addEventListener('click', function() {
-        socket.emit('clearLog'); // Emit event to server to clear log
-    });
-}
+//function setupClearConsoleButton() {
+//    const clearConsoleBtn = document.getElementById('clearConsoleBtn');
+//    clearConsoleBtn.addEventListener('click', function() {
+//        socket.emit('clearLog'); // Emit event to server to clear log
+//    });
+//}
 
 function createCard(deck, index, cardIndex) {
     const card = document.createElement('div');
@@ -161,65 +161,65 @@ function setupButtonHandlers() {
         }, 500); // The timeout duration should match the CSS animation duration
     });
 
-    autoPlaceBtn.addEventListener('click', () => {
-        let delay = 0; // Initial delay
-        const delayIncrement = 500; // Increment delay for each card (500ms)
+    // autoPlaceBtn.addEventListener('click', () => {
+    //     let delay = 0; // Initial delay
+    //     const delayIncrement = 500; // Increment delay for each card (500ms)
     
-        decks.forEach((deck, index) => {
-            const card = deck.querySelector('.card:not(.placed)');
-            const dropzone = dropzones[index];
+    //     decks.forEach((deck, index) => {
+    //         const card = deck.querySelector('.card:not(.placed)');
+    //         const dropzone = dropzones[index];
             
-            if (card && !dropzone.querySelector('.card')) {
-                setTimeout(() => {
-                    dropzone.appendChild(card);
-                    card.classList.add('placed', 'falling');
-                    setTimeout(() => card.classList.remove('falling'), 1000); // Remove the class after animation
-                    socket.emit('autoPlaceCard', { cardId: card.id, dropzoneId: dropzone.id });
-                }, delay);
+    //         if (card && !dropzone.querySelector('.card')) {
+    //             setTimeout(() => {
+    //                 dropzone.appendChild(card);
+    //                 card.classList.add('placed', 'falling');
+    //                 setTimeout(() => card.classList.remove('falling'), 1000); // Remove the class after animation
+    //                 socket.emit('autoPlaceCard', { cardId: card.id, dropzoneId: dropzone.id });
+    //             }, delay);
     
-                delay += delayIncrement;
-            }
-        });
-    });
+    //             delay += delayIncrement;
+    //         }
+    //     });
+    // });
     
-    flipAllBtn.addEventListener('click', () => {
-        let cardsInDropzones = false;
-        let allCardsFaceSameSide = true;
-        let firstCardFlipped = null;
-        let cardIds = []; // Array to store the IDs of cards being flipped
+    // flipAllBtn.addEventListener('click', () => {
+    //     let cardsInDropzones = false;
+    //     let allCardsFaceSameSide = true;
+    //     let firstCardFlipped = null;
+    //     let cardIds = []; // Array to store the IDs of cards being flipped
     
-        dropzones.forEach(dropzone => {
-            const card = dropzone.querySelector('.card');
-            if (card) {
-                cardsInDropzones = true;
-                firstCardFlipped = firstCardFlipped === null ? card.classList.contains('flip') : firstCardFlipped;
-                if (card.classList.contains('flip') !== firstCardFlipped) {
-                    allCardsFaceSameSide = false;
-                }
-            }
-        });
+    //     dropzones.forEach(dropzone => {
+    //         const card = dropzone.querySelector('.card');
+    //         if (card) {
+    //             cardsInDropzones = true;
+    //             firstCardFlipped = firstCardFlipped === null ? card.classList.contains('flip') : firstCardFlipped;
+    //             if (card.classList.contains('flip') !== firstCardFlipped) {
+    //                 allCardsFaceSameSide = false;
+    //             }
+    //         }
+    //     });
     
-        if (!cardsInDropzones) {
-            alert("Aseta kortit ensin pudotusalueelle!");
-            return;
-        }
-        if (!allCardsFaceSameSide) {
-            alert("Cannot flip all cards when they are showing different sides.");
-            return;
-        }
+    //     if (!cardsInDropzones) {
+    //         alert("Aseta kortit ensin pudotusalueelle!");
+    //         return;
+    //     }
+    //     if (!allCardsFaceSameSide) {
+    //         alert("Cannot flip all cards when they are showing different sides.");
+    //         return;
+    //     }
     
-        dropzones.forEach(dropzone => {
-            const card = dropzone.querySelector('.card');
-            if (card) {
-                card.classList.toggle('flip');
-                cardIds.push(card.id); // Add the card ID to the array
-            }
-        });
+    //     dropzones.forEach(dropzone => {
+    //         const card = dropzone.querySelector('.card');
+    //         if (card) {
+    //             card.classList.toggle('flip');
+    //             cardIds.push(card.id); // Add the card ID to the array
+    //         }
+    //     });
     
-        if (cardIds.length > 0) {
-            socket.emit('flipAllCards', { cardIds }); // Emit the event with the array of card IDs
-        }
-    });
+    //     if (cardIds.length > 0) {
+    //         socket.emit('flipAllCards', { cardIds }); // Emit the event with the array of card IDs
+    //     }
+    // });
 }
 
 function formatCardText(text) {
@@ -296,23 +296,23 @@ socket.on('flipCard', function(data) {
     }
 });
 
-socket.on('autoPlaceCard', function(data) {
-    const card = document.getElementById(data.cardId);
-    const dropzone = document.getElementById(data.dropzoneId);
-    if (card && dropzone) {
-        dropzone.appendChild(card);
-        Object.assign(card.style, { position: 'absolute', top: '0', left: '0' });
-    }
-});
+// socket.on('autoPlaceCard', function(data) {
+//     const card = document.getElementById(data.cardId);
+//     const dropzone = document.getElementById(data.dropzoneId);
+//     if (card && dropzone) {
+//         dropzone.appendChild(card);
+//         Object.assign(card.style, { position: 'absolute', top: '0', left: '0' });
+//     }
+// });
 
-socket.on('flipAllCards', function(data) {
-    data.cardIds.forEach(cardId => {
-        const card = document.getElementById(cardId);
-        if (card) {
-            card.classList.toggle('flip');
-        }
-    });
-});
+// socket.on('flipAllCards', function(data) {
+//     data.cardIds.forEach(cardId => {
+//         const card = document.getElementById(cardId);
+//         if (card) {
+//             card.classList.toggle('flip');
+//         }
+//     });
+// });
 
 // Existing 'resetDecks' Event Listener
 socket.on('resetDecks', (gameId) => {
