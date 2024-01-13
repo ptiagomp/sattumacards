@@ -71,7 +71,7 @@ function createCard(deck, index, cardIndex) {
     const back = document.createElement('div');
     back.className = 'back';
     back.style = `background-image: url('./front_card_img/front_draw.png'); 
-                            background-size: cover; background-color: white;`;
+                  background-size: cover; background-color: white;`;
 
     card.append(front, back);
     deck.appendChild(card);
