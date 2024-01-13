@@ -398,34 +398,3 @@ button:active::before {
 #backgroundColorSelector:hover {
     background-color: #ddd;
 }
-
-.deck-label {
-    position: absolute;
-    bottom: 100%; /* Position above the deck */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%);
-    background-color: #fff; /* Or any color you prefer */
-    padding: 5px 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.deck:hover .deck-label {
-    visibility: visible;
-    opacity: 1;
-}
-
-.deck-label::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    transform: translateX(-50%);
-}
