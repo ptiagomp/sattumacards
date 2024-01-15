@@ -189,7 +189,7 @@ button:active::before {
 }
 
 #homeBtn {
-    background-color: #D3D3D3;
+    background-color: black;
     color: black;
 }
 
@@ -397,4 +397,19 @@ button:active::before {
 
 #backgroundColorSelector:hover {
     background-color: #ddd;
+}
+.image-button {
+    border: none; /* Removes the default border */
+    background-color: transparent; /* Makes the background transparent */
+    cursor: pointer; /* Changes the cursor on hover */
+    padding: 5px; /* Adds some padding around the image */
+}
+
+.image-button img {
+    width: 30px; /* Adjusts the width of the image */
+    height: auto; /* Keeps the aspect ratio of the image */
+}
+
+.image-button:hover {
+    background-color: #45a049; /* Changes the background color on hover */
 }
