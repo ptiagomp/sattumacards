@@ -70,7 +70,7 @@ function createCard(deck, index, cardIndex) {
 
     const back = document.createElement('div');
     back.className = 'back';
-    back.style = `background-image: url('./front_card_img/front_draw.png'); 
+    back.style = `background-image: url('./front_card_img/front_draw.webp'); 
                   background-size: cover; background-color: white;`;
 
     card.append(front, back);

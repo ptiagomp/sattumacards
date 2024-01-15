@@ -189,7 +189,7 @@ button:active::before {
 }
 
 #homeBtn {
-    background-color: black;
+    background-color: #45a049;
     color: black;
 }
 
@@ -391,7 +391,7 @@ button:active::before {
     padding: 1px 1px;
     border-radius: 5px;
     border: 1px solid #333;
-    background-color: #fff;
+    background-color: #C8A2C8;
     cursor: pointer;
 }
 
