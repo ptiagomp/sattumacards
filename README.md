@@ -19,3 +19,7 @@ done:
 ___________________________________________________
 
 to fix:
+ - all the cards should have text on them
+ - only able to drag the card on top of the deck
+ - why when i drag is dragging two cards
+ - if one card is flipped. when i flip the ones behind, they should go on front
