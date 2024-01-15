@@ -177,7 +177,7 @@ button:active::before {
 
 /* Specific Button Styles (if needed) */
 #resetBtn {
-    background-color: #98FF98;
+    background-color: #F08080;
 }
 
 #autoPlaceBtn {
@@ -340,7 +340,7 @@ button:active::before {
     font-size: 24px; /* Size of the icon */
     line-height: 1; /* Adjust line height to center the icon vertically */
     border: none; /* Border of the button */
-    background-color: #fff; /* Background color of the button */
+    background-color:yellow; /* Background color of the button */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
