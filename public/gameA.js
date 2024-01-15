@@ -146,20 +146,35 @@ function setupButtonHandlers() {
     
         // Wait for the fade-out animation to complete before resetting
         setTimeout(() => {
-            decks.forEach(deck => deck.innerHTML = '');
-            dropzones.forEach(dropzone => dropzone.innerHTML = '');
-            createDecks();
-            isAnyCardFlipped = false;
-            // Request new card texts for all cards
-            decks.forEach((deck, deckIndex) => {
-                for (let cardIndex = 0; cardIndex < 10; cardIndex++) {
-                    const cardId = `deck-${deckIndex}-card-${cardIndex}`;
-                    socket.emit('requestCardText', { deckIndex: deckIndex, cardId: cardId });
-                }
-            });
-            socket.emit('resetDecks');
+            location.reload(); // Refresh the page after the animations
         }, 500); // The timeout duration should match the CSS animation duration
     });
+
+    // resetBtn.addEventListener('click', () => {
+    //     // Apply fade-out effect to all cards in dropzones
+    //     dropzones.forEach(dropzone => {
+    //         const cards = dropzone.querySelectorAll('.card');
+    //         cards.forEach(card => {
+    //             card.classList.add('fade-out');
+    //         });
+    //     });
+    
+    //     // Wait for the fade-out animation to complete before resetting
+    //     setTimeout(() => {
+    //         decks.forEach(deck => deck.innerHTML = '');
+    //         dropzones.forEach(dropzone => dropzone.innerHTML = '');
+    //         createDecks();
+    //         isAnyCardFlipped = false;
+    //         // Request new card texts for all cards
+    //         decks.forEach((deck, deckIndex) => {
+    //             for (let cardIndex = 0; cardIndex < 10; cardIndex++) {
+    //                 const cardId = `deck-${deckIndex}-card-${cardIndex}`;
+    //                 socket.emit('requestCardText', { deckIndex: deckIndex, cardId: cardId });
+    //             }
+    //         });
+    //         socket.emit('resetDecks');
+    //     }, 500); // The timeout duration should match the CSS animation duration
+    // });
 
     // autoPlaceBtn.addEventListener('click', () => {
     //     let delay = 0; // Initial delay
@@ -223,14 +238,14 @@ function setupButtonHandlers() {
 }
 
 function formatCardText(text) {
-    if (text.length <= 21) return text;
+    if (text.length <= 15) return text;
 
     const words = text.split(' ');
     let formattedText = '';
     let currentLine = '';
 
     words.forEach(word => {
-        if ((currentLine + word).length > 21) {
+        if ((currentLine + word).length > 15) {
             formattedText += currentLine.trim() + '\n'; // Add a line break
             currentLine = word + ' '; // Start a new line with the current word
         } else {

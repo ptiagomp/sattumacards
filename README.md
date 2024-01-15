@@ -17,3 +17,5 @@ done:
 - instructions with modal window
 - - pode mudar o esquema de cores do ecrã
 ___________________________________________________
+
+to fix:
