@@ -29,21 +29,31 @@
         <div class="dropzone" id="dropzone2"></div>
     </div>
 
-    <!-- Button Container -->
     <div class="button-container">
-        <button id="infoBtn" title="Pelin ohjeet">&#9432;</button> <!-- Info icon -->
-        <button id="homeBtn" title="Takaisin päävalikkoon." onclick="window.location.href='index.html';" class="image-button"><img src="./imgs/sattuma-logo.webp" alt="Sattuma"></button>
+        <!-- Info Button -->
+        <button id="infoBtn" title="Pelin ohjeet">
+            &#9432; <!-- Info icon -->
+        </button>
+    
+        <!-- Home Button with an image inside -->
+        <button id="homeBtn" title="Takaisin päävalikkoon." onclick="window.location.href='index.html';" class="image-button">
+            <img src="./imgs/sattuma-logo.webp" alt="Sattuma">
+        </button>
+    
+        <!-- Reset Button -->
         <button id="resetBtn" title="Resetoi ja sekoita kortit.">Sekoita Kortit</button>
-        <!-- <button id="autoPlaceBtn" title="Aseta kortit automaattisesti niiden pudotusalueille.">Aseta Kortit</button> -->
-        <!-- <button id="flipAllBtn" title="Kääntää kaikki kortit paljastaen niiden sisällön.">Käännä Kortit</button> -->
+    
+        <!-- Background Color Selector -->
         <select id="backgroundColorSelector" title="Vaihda taustaväri">
+            <!-- Standard Colors -->
             <option value="default">Oletus</option>
             <option value="purple">Violetti</option>
             <option value="candypink">Karkkipinkki</option>
             <option value="softplum">Mieto Luumu</option>
             <option value="softlavender">Mieto Laventeli</option>
             <option value="seagreen">Merenvihreä</option>
-            <!-- Gradients -->
+    
+            <!-- Gradient Colors -->
             <option value="ocean">Valtameri</option>
             <option value="bloodorange">Veriappelsiini</option>
             <option value="antarctica">Antarktis</option>
@@ -51,6 +61,7 @@
             <option value="negative">Negatiivinen Vaikutus</option>
         </select>
     </div>
+    
 
     <!-- Info Popup Modal -->
     <div id="infoModal" class="modal">
