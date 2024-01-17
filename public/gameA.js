@@ -21,12 +21,12 @@ const dropzones = document.querySelectorAll('.dropzone'); // Collection of all d
 
 // Data Definitions
 const deckImages = [
-    "tilanne-bcard.webp",
-    "tila-bcard.webp",
-    "keinot-bcard.webp",
-    "resurssit-bcard.webp",
-    "opetusmuoto-bcard.webp",
-    "sattuma-bcard.webp"
+    "tilanne-fcard.webp",
+    "tila-fcard.webp",
+    "keinot-fcard.webp",
+    "resurssit-fcard.webp",
+    "opetusmuoto-fcard.webp",
+    "sattuma-fcard.webp"
 ]; // Array of deck image filenames
 
 
@@ -94,14 +94,16 @@ function createCard(deck, index, cardIndex) {
     // Create the front side of the card
     const front = document.createElement('div');
     front.className = 'front';
-    front.style.backgroundImage = `url('./back_card_imgs/${deckImages[index]}')`;
+    front.style.backgroundImage = "url('./back_card_imgs/sattuma-bkg.png')";
+    // front.style.backgroundImage = `url('./back_card_imgs/${deckImages[index]}')`;
     front.style.backgroundSize = 'cover';
     front.style.backgroundColor = '#939598';
 
     // Create the back side of the card
     const back = document.createElement('div');
     back.className = 'back';
-    back.style.backgroundImage = "url('./front_card_img/front_draw.webp')";
+    back.style.backgroundImage = `url('./front_card_img/${deckImages[index]}')`;
+    // back.style.backgroundImage = "url('./front_card_img/front_draw.webp')";
     back.style.backgroundSize = 'cover';
     back.style.backgroundColor = 'white';
 
