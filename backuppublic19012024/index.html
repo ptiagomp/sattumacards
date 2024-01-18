@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sattuma</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+</head>
+<body>
+
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="menu-content" id="menuContent">
+            <ul>
+                <li onclick="openModal('instructionsModal')">Pelin ohjeet</li>
+                <li onclick="openModal('historyModal')">Viitteet ja historia</li>
+                <li onclick="openModal('contactsModal')">Yhteystiedot</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modals for Menu Items -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('instructionsModal')">&times;</span>
+            <h2>Pelin ohjeet</h2>
+            <p>[Instructions content]</p>
+        </div>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('historyModal')">&times;</span>
+            <h2>Viitteet ja historia</h2>
+            <p>[History content]</p>
+        </div>
+    </div>
+
+    <div id="contactsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactsModal')">&times;</span>
+            <h2>Yhteystiedot</h2>
+            <p>[Contacts content]</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="landing-container">
+        <img src="./imgs/sattuma-logo.webp" alt="sattuma logo" class="main-logo">
+        <img src="./imgs/sattuma-text-img.webp" alt="Sattuma" class="title-image">
+        <div class="buttons-container">
+            <button class="button-arounder" onclick="navigate('gameA.html')">Pelihuoneeseen</button>
+        </div>
+    </main>
+
+    <!-- Resolution Warning -->
+    <div id="resolution-warning" style="display: none;">
+        <p>Optimoi ikkunan koko: 1024x768 tai suurempi.<br>Säädä ikkunan kokoa, kunnes viesti katoaa.</p>
+        <button style="background-color: #ffd700; color: #1e272e; padding: 10px 20px; border: none; cursor: pointer;" onclick="document.getElementById('resolution-warning').style.display='none'">Sulje</button>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="logo-container">
+        <img src="./imgs/aalto-logo.webp" alt="Aalto Logo" class="logo">
+        <img src="./imgs/kuvataide-logo.webp" alt="Kuvataide Logo" class="logo">
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="index.js"></script>
+
+</body>
+</html>
