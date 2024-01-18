@@ -18,7 +18,7 @@ body {
 
 .main-logo {
     display: block;
-    width: 50%;
+    width: 100%;
     max-width: 300px;
     margin: 0 auto;
     height: auto;
@@ -112,3 +112,126 @@ body.fade-out {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+/* Burger Menu Styles */
+.burger-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+.menu-icon {
+    cursor: pointer;
+    padding: 10px; /* Add padding for better touch area */
+}
+
+.menu-icon .line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    color: black;
+    right: 0; /* Aligns the dropdown to the right */
+    top: 40px; /* Adjust based on your layout */
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Removes default margin */
+}
+
+.menu-content ul li {
+    padding: 12px 16px;
+    text-align: left;
+    color: black;
+}
+
+.menu-content ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.menu-content ul li a:hover {
+    background-color: #ddd;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    z-index: 1000; /* High z-index to ensure it's on top */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Semi-transparent black background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Adjust top margin and center horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    color: black;
+    opacity: 0.7;
+    width: 80%; /* Adjust based on your design */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Optional: Adds shadow for depth */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Rest of your CSS */
+
+@keyframes spin-with-enhanced-movement {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-90deg);
+    }
+    40% {
+        transform: rotate(180deg);
+    }
+    60% {
+        transform: rotate(-270deg);
+
+    }
+    80% {
+        transform: rotate(360deg);
+    }
+    90% {
+        transform: rotate(-45deg);
+    }
+}
+
+.main-logo {
+    animation: spin-with-enhanced-movement 6s ease-in-out infinite;
+}
+
+
+

@@ -3,27 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kortin Keskustelu</title>
+    <title>Sattuma</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+<!-- Burger Menu -->
+<!-- Burger Menu -->
+<div class="burger-menu">
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="menu-content" id="menuContent">
+        <ul>
+            <li onclick="openModal('instructionsModal')">Game Instructions</li>
+            <li onclick="openModal('contactsModal')">Contacts</li>
+            <li onclick="openModal('historyModal')">References & History</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modals for Menu Items -->
+<div id="instructionsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('instructionsModal')">&times;</span>
+        <h2>Game Instructions</h2>
+        <p>Content for Game Instructions...</p>
+    </div>
+</div>
+<div id="contactsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('contactsModal')">&times;</span>
+        <h2>Contacts</h2>
+        <p>Content for Game Instructions...</p>
+    </div>
+</div>
+<div id="historyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('historyModal')">&times;</span>
+        <h2>References & History</h2>
+        <p>Content for Game Instructions...</p>
+    </div>
+</div>
+
+
     <main class="landing-container">
         <!-- Main Logo -->
         <img src="./imgs/sattuma-logo.webp" alt="sattuma logo" class="main-logo">
 
         <!-- Title -->
-        <h1>Tervetuloa<br>Sattuma-pelikorttiin!</h1>
+        <h1>Sattuma</h1>
 
         <!-- Create/Join New Button -->
         <div class="button-container">
             <button id="createGameBtn" onclick="navigate('gameA.html')">Liity Pelihuoneeseen</button>
         </div>
-
-        <!-- Join Game Section
-        <div class="join-game-container">
-            <button id="joinGameBtn">Liity Peliin</button>
-            <input type="text" id="joinGameInput" placeholder="Kirjoita Pelin ID">
-        </div> -->
     </main>
 
     <footer class="logo-container">
@@ -34,3 +69,4 @@
     <script src="index.js"></script>
 </body>
 </html>
+
