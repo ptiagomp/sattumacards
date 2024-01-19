@@ -1,97 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Sattuma - Peliohjeet ja Pelaaminen">
-    <meta property="og:description" content="Tervetuloa Sattuma -pelin ohjesivulle. Täältä löydät peliohjeet ja pelaamiseen liittyvät tiedot.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Sattuma - Peliohjeet ja Pelaaminen" />
+    <meta
+      property="og:description"
+      content="Tervetuloa Sattuma -pelin ohjesivulle. Täältä löydät peliohjeet ja pelaamiseen liittyvät tiedot."
+    />
     <title>Sattuma</title>
-    <link rel="stylesheet" href="gameA.css">
-</head>
-<body>
+    <link rel="stylesheet" href="gameA.css" />
+  </head>
+  <body>
     <!-- Deck Container -->
     <div class="deck-container">
-        <div class="deck" id="deck1" title="Tilanne"></div>
-        <div class="deck" id="deck0" title="Tila"></div>
-        <div class="deck" id="deck5" title="Keinot ja Oivallukset"></div>
-        <div class="deck" id="deck3" title="Ressursit"></div>
-        <div class="deck" id="deck4" title="Opetusmuoto"></div>
-        <div class="deck" id="deck2" title="Sattuma"></div>
+      <div class="deck" id="deck1" title="Tilanne"></div>
+      <div class="deck" id="deck0" title="Tila"></div>
+      <div class="deck" id="deck5" title="Keinot ja Oivallukset"></div>
+      <div class="deck" id="deck3" title="Ressursit"></div>
+      <div class="deck" id="deck4" title="Opetusmuoto"></div>
+      <div class="deck" id="deck2" title="Sattuma"></div>
     </div>
 
     <!-- Dropzone Container -->
     <div class="dropzone-container">
-        <div class="dropzone" id="dropzone1"></div>
-        <div class="dropzone" id="dropzone0"></div>
-        <div class="dropzone" id="dropzone5"></div>
-        <div class="dropzone" id="dropzone3"></div>
-        <div class="dropzone" id="dropzone4"></div>
-        <div class="dropzone" id="dropzone2"></div>
+      <div class="dropzone" id="dropzone1"></div>
+      <div class="dropzone" id="dropzone0"></div>
+      <div class="dropzone" id="dropzone5"></div>
+      <div class="dropzone" id="dropzone3"></div>
+      <div class="dropzone" id="dropzone4"></div>
+      <div class="dropzone" id="dropzone2"></div>
     </div>
 
     <div class="button-container">
-        <!-- Info Button -->
-        <button id="infoBtn" title="Pelin ohjeet">
-            &#9432; <!-- Info icon -->
-        </button>
-    
-        <!-- Home Button with an image inside -->
-        <button id="homeBtn" title="Takaisin päävalikkoon." onclick="window.location.href='index.html';" class="image-button">
-            <img src="./imgs/sattuma-logo.webp" alt="Sattuma">
-        </button>
-    
-        <!-- Reset Button -->
-        <button id="resetBtn" title="Resetoi ja sekoita kortit.">Sekoita Kortit</button>
-    
-        <!-- Background Color Selector -->
-        <select id="backgroundColorSelector" title="Vaihda taustaväri">
-            <!-- Standard Colors -->
-            <option value="default">Oletus</option>
-            <option value="purple">Violetti</option>
-            <option value="candypink">Karkkipinkki</option>
-            <option value="softplum">Mieto Luumu</option>
-            <option value="softlavender">Mieto Laventeli</option>
-            <option value="seagreen">Merenvihreä</option>
-    
-            <!-- Gradient Colors -->
-            <option value="ocean">Valtameri</option>
-            <option value="bloodorange">Veriappelsiini</option>
-            <option value="antarctica">Antarktis</option>
-            <option value="dusk">Hämärä</option>
-            <option value="negative">Negatiivinen Vaikutus</option>
-        </select>
+      <!-- Info Button -->
+      <button id="infoBtn" title="Pelin ohjeet">
+        &#9432;
+        <!-- Info icon -->
+      </button>
+
+      <!-- Home Button with an image inside -->
+      <button
+        id="homeBtn"
+        title="Takaisin päävalikkoon."
+        onclick="window.location.href='index.html';"
+        class="image-button"
+      >
+        <img src="./imgs/sattuma-logo.webp" alt="Sattuma" />
+      </button>
+
+      <!-- Reset Button -->
+      <button id="resetBtn" title="Resetoi ja sekoita kortit.">
+        Sekoita Kortit
+      </button>
+
+      <!-- Background Color Selector -->
+      <select id="backgroundColorSelector" title="Vaihda taustaväri">
+        <!-- Standard Colors -->
+        <option value="default">Oletus</option>
+        <option value="purple">Violetti</option>
+        <option value="candypink">Karkkipinkki</option>
+        <option value="softplum">Mieto Luumu</option>
+        <option value="softlavender">Mieto Laventeli</option>
+        <option value="seagreen">Merenvihreä</option>
+
+        <!-- Gradient Colors -->
+        <option value="ocean">Valtameri</option>
+        <option value="bloodorange">Veriappelsiini</option>
+        <option value="antarctica">Antarktis</option>
+        <option value="dusk">Hämärä</option>
+        <option value="negative">Negatiivinen Vaikutus</option>
+      </select>
     </div>
-    
 
     <!-- Info Popup Modal -->
     <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Pelin ohjeet</h3>
-            <h5>Tiimi A:</h5>
-            <p>Jokainen pelaaja saa 5 korttia yhdestä pakasta. Ensimmäisellä kierroksella jokainen pelaaja pelaa yhden kortin asettamalla sen pöydälle. Toisella kierroksella asettaessaan seuraavan kortin pöydälle jokainen pelaaja kertoo vuorollaan tarinan liittyen opetustilanteeseen. Vähintään kaksi kierrosta, lisäkierros on mahdollinen. Satunnaiset kortit sisältyvät samaan pakkaan.</p>
-            <h5>Tiimi B:</h5>
-            <p>Pelissä on 2 pakkaa. Pelipakka ja satunnaisen tapahtuman pakka. Pelipakasta otetaan yhteensä 3 korttia ja niistä luodaan tarina opetustilanteesta. Sen jälkeen otetaan kortti satunnaisen tapahtuman pakasta, ja keskustellaan sen vaikutuksesta opetustilanteen tarinaan. Satunnaisen tapahtuman pakasta voi ottaa kortin kolme kertaa.</p>
-            <h5>Lisäkestävyyspeli:</h5>
-            <p>"Tämä tarina on totta" -kokemus pelataan korteilla, ja se vahvistuu kuviteltaessa satunnaisen tapahtumakortin vaikutusta. (<em>sisältyykö projektin lopullisiin huomioihin?</em>)</p>
-        </div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Pelin ohjeet</h3>
+        <h5>Tiimi A:</h5>
+        <p>
+          Jokainen pelaaja saa 5 korttia yhdestä pakasta. Ensimmäisellä
+          kierroksella jokainen pelaaja pelaa yhden kortin asettamalla sen
+          pöydälle. Toisella kierroksella asettaessaan seuraavan kortin pöydälle
+          jokainen pelaaja kertoo vuorollaan tarinan liittyen
+          opetustilanteeseen. Vähintään kaksi kierrosta, lisäkierros on
+          mahdollinen. Satunnaiset kortit sisältyvät samaan pakkaan.
+        </p>
+        <h5>Tiimi B:</h5>
+        <p>
+          Pelissä on 2 pakkaa. Pelipakka ja satunnaisen tapahtuman pakka.
+          Pelipakasta otetaan yhteensä 3 korttia ja niistä luodaan tarina
+          opetustilanteesta. Sen jälkeen otetaan kortti satunnaisen tapahtuman
+          pakasta, ja keskustellaan sen vaikutuksesta opetustilanteen tarinaan.
+          Satunnaisen tapahtuman pakasta voi ottaa kortin kolme kertaa.
+        </p>
+        <h5>Lisäkestävyyspeli:</h5>
+        <p>
+          "Tämä tarina on totta" -kokemus pelataan korteilla, ja se vahvistuu
+          kuviteltaessa satunnaisen tapahtumakortin vaikutusta. (<em
+            >sisältyykö projektin lopullisiin huomioihin?</em
+          >)
+        </p>
+      </div>
     </div>
 
     <!-- Player List and Game Console Container -->
     <div class="info-console-container">
-        <div class="game-info-container">
-            <div class="game-id-section">
-                <div id="gameIdDisplay">Pelin ID: </div>
-            </div>
-            <ul id="playersList">
-                <p>Pelissa:</p>
-                <!-- Players will be listed here -->
-            </ul>
+      <div class="game-info-container">
+        <div class="game-id-section">
+          <div id="gameIdDisplay">Pelin ID:</div>
         </div>
+        <ul id="playersList">
+          <p>Pelissa:</p>
+          <!-- Players will be listed here -->
+        </ul>
+      </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script src="gameA.js"></script>
-</body>
+  </body>
 </html>
