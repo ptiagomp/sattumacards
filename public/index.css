@@ -1,26 +1,35 @@
 /* Base Styles */
 body {
-    margin:0;
-    padding:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:'Roboto',sans-serif;
-    background:#1e272e;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Changed to min-height */
+    display: flex;
+    flex-direction: column; /* Ensure content is laid out vertically */
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background: #1e272e;
 }
+
 body.fade-out {
     animation:fadeOut 2s forwards;
 }
 /* Landing Container */
 .landing-container {
-    text-align:center;
+    text-align: center;
+    flex-grow: 1; /* Allows the container to grow and take available space */
+    display: flex;
+    flex-direction: column; /* Stack children elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 100%; /* Full width */
 }
+
 /* Logo Styles */
 .main-logo {
     display:block;
-    width:60%;
-    max-width:300px;
+    width:40%;
+    max-width:200px;
     margin:0 auto;
     margin-bottom:30px;
     height:auto;
@@ -66,17 +75,29 @@ button {
 }
 /* Logo Container */
 .logo-container {
-    position:absolute;
-    bottom:50px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:100px;
-    opacity:0.7;
+    position: relative;
+    width: 100%; /* Ensure full width */
+    display: flex;
+    justify-content: center; /* Center logos horizontally */
+    gap: 100px;
+    opacity: 0.7;
+    margin-top: auto; /* Push to bottom */
+    margin-bottom: 50px;
 }
+
 .logo {
-    height:40px;
-    width:auto;
+    height: 40px;
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        justify-content: center; /* Centers the logos */
+    }
+
+    .logo {
+        height: 30px; /* Smaller logos for smaller screens */
+    }
 }
 /* Burger Menu Styles */
 .burger-menu {
@@ -224,3 +245,4 @@ to {
     transform:rotate(-45deg);
 }
 }
+
