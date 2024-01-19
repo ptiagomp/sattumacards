@@ -444,6 +444,7 @@ button:active::before {
   border: 1px solid #333;
   background-color: white;
   cursor: pointer;
+  text-align: center;
 }
 
 #backgroundColorSelector:hover {
