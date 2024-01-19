@@ -1,73 +1,99 @@
 // Utility Functions
 function navigate(url) {
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-        window.location.href = url;
-    }, 2000); // Delay matches the animation duration
+  document.body.classList.add("fade-out");
+  setTimeout(() => (window.location.href = url), 2000);
 }
 
-// Specific Event Handler Functions
 function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
-
-    // Reset the burger menu icon to default (three lines)
-    var menuIcon = document.querySelector('.menu-icon');
-    if (menuIcon.classList.contains('open')) {
-        menuIcon.classList.remove('open');
-    }
-
-    // Close the burger menu content
-    var menuContent = document.getElementById("menuContent");
-    menuContent.style.display = 'none';
+  document.getElementById(modalId).style.display = "block";
+  updateMenuIconAndContent(false);
 }
 
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
+  document.getElementById(modalId).style.display = "none";
 }
 
 function toggleMenu() {
-    var menuIcon = document.querySelector('.menu-icon');
-    menuIcon.classList.toggle('open');
-
-    // Toggle the visibility of the menu content
-    var menuContent = document.getElementById('menuContent');
-    menuContent.style.display = (menuContent.style.display === 'block') ? 'none' : 'block';
+  var menuIcon = document.querySelector(".menu-icon");
+  menuIcon.classList.toggle("open");
+  var menuContent = document.getElementById("menuContent");
+  menuContent.style.display =
+    menuContent.style.display === "block" ? "none" : "block";
 }
 
-// Event Binding Function
+function updateMenuIconAndContent(reset) {
+  var menuIcon = document.querySelector(".menu-icon");
+  var menuContent = document.getElementById("menuContent");
+
+  if (reset && menuIcon.classList.contains("open")) {
+    menuIcon.classList.remove("open");
+  }
+  menuContent.style.display = reset ? "none" : menuContent.style.display;
+}
+
+function loadModalContent(modalId, contentId, filePath) {
+  fetch(filePath)
+    .then((response) => response.text())
+    .then((htmlText) => {
+      const contentElement = document.getElementById(contentId);
+      contentElement.innerHTML = htmlText; // Use innerHTML to render HTML content
+    })
+    .catch((error) =>
+      console.error("Error loading content for " + modalId + ":", error)
+    );
+}
+
+// Function to handle window resize
+function handleWindowResize() {
+  const minWidth = 1024;
+  const minHeight = 768;
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const resolutionWarning = document.getElementById("resolution-warning");
+  resolutionWarning.style.display =
+    width < minWidth || height < minHeight ? "block" : "none";
+}
+
+// Event Binding Functions
 function bindEventListeners() {
-    const createGameButton = document.getElementById('createGameBtn');
-    createGameButton.addEventListener('click', () => navigate('gameA.html'));
+  const createGameBtn = document.getElementById("createGameBtn");
+  const closeModalButton = document.getElementById("closeModalButton");
+  const centerImage = document.getElementById("centerImage");
 
-    const closeModalButton = document.getElementById('closeModalButton');
-    closeModalButton.addEventListener('click', () => closeModal('myModal'));
+  if (createGameBtn) {
+    createGameBtn.addEventListener("click", () => navigate("gameA.html"));
+  }
+
+  if (closeModalButton) {
+    closeModalButton.addEventListener("click", () => closeModal("myModal"));
+  }
+
+  if (centerImage) {
+    centerImage.addEventListener("dragstart", (e) => e.preventDefault());
+  }
+
+  window.addEventListener("resize", handleWindowResize);
+  document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+  handleWindowResize();
+
+  // Initialization
+  loadModalContent(
+    "instructionsModal",
+    "instructionsContent",
+    "./text-instruct/pelinohjeet-main.txt"
+  );
+  loadModalContent(
+    "historyModal",
+    "historyContent",
+    "./text-instruct/viitteethistoria-main.txt"
+  );
+  loadModalContent(
+    "contactsModal",
+    "contactsContent",
+    "./text-instruct/yhteystiedot-main.txt"
+  );
 }
 
-// Event Listener Registrations
-document.addEventListener('DOMContentLoaded', function() {
-    bindEventListeners();
-});
-
-window.addEventListener('resize', function() {
-    var minWidth = 1024; // Define your minimum width
-    var minHeight = 768; // Define your minimum height
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-
-    if (width < minWidth || height < minHeight) {
-        // Show the popup
-        document.getElementById('resolution-warning').style.display = 'block';
-    } else {
-        // Hide the popup
-        document.getElementById('resolution-warning').style.display = 'none';
-    }
-});
-
-// disable-right-click.js
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-}, false);
-
-document.getElementById('centerImage').addEventListener('dragstart', function(e) {
-    e.preventDefault();
-});
+// DOM Content Loading
+document.addEventListener("DOMContentLoaded", bindEventListeners);
