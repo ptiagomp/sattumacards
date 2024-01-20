@@ -13,6 +13,14 @@ function closeModal(modalId) {
   document.getElementById(modalId).style.display = "none";
 }
 
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    closeModal(event.target.id);
+  }
+};
+
+
+
 function toggleMenu() {
   var menuIcon = document.querySelector(".menu-icon");
   menuIcon.classList.toggle("open");

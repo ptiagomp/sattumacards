@@ -465,3 +465,36 @@ button:active::before {
 .image-button:hover {
   background-color: #45a049; /* Changes the background color on hover */
 }
+
+
+.used-cards {
+    width: 100px; /* example size */
+    height: 150px; /* example size */
+    position: relative;
+    left: 10%; /* distance from the left side of the screen */
+    top: 54%; /* distance from the top of the screen */
+    transform: translateY(-50%);
+    border: 1px dashed #ccc; /* example styling */
+    /* Add more styling as needed */
+  }
+  
+  .used-cards-label {
+    text-align: center; /* Centers the text */
+    color: #45a049; /* Example text color */
+    font-size: 14px; /* Example font size */
+    margin-top: 5px; /* Space between the pile and the label */
+    margin-left: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* Additional styling as needed */
+  }
+  
+  .used-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the child elements horizontally */
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 50%; /* Adjust to align with dropzones */
+    transform: translateY(-50%); /* Centers the container vertically relative to its position */
+  }
+  

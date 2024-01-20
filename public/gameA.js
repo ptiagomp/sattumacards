@@ -104,20 +104,64 @@ function createCard(deck, index, cardIndex) {
   back.style.backgroundSize = "cover";
   back.style.backgroundColor = "white";
 
+  card.addEventListener("dblclick", () => {
+    if (!isInUsedCardsPile(card)) {
+      moveToUsedCardsPile(card);
+    }
+  });
+  
+
   // Append front and back to the card, and the card to the deck
   card.append(front, back);
   deck.appendChild(card);
 
   // Add click event listener for card flip
   card.addEventListener("click", () => {
-    console.log("Flip event");
-    card.classList.toggle("flip");
-    socket.emit("flipCard", { cardId: card.id });
+    if (!isInUsedCardsPile(card)) {
+      console.log("Flip event");
+      card.classList.toggle("flip");
+      socket.emit("flipCard", { cardId: card.id });
+    }
   });
+  
 
   // Load a random text on the card
   loadRandomWord(index, card);
 }
+
+function isInUsedCardsPile(card) {
+    const usedCardsPile = document.getElementById("usedCardsPile");
+    return usedCardsPile.contains(card);
+  }
+  
+  
+
+
+function moveToUsedCardsPile(card) {
+    const usedCardsPile = document.getElementById("usedCardsPile");
+  
+    if (usedCardsPile) {
+      // Check if the card is not flipped
+      if (!card.classList.contains("flip")) {
+        // Flip the card
+        card.classList.add("flip");
+      }
+  
+      // Calculate the number of cards in the pile
+      const cardsInPile = usedCardsPile.children.length;
+  
+      // Set the position of the card based on the number of cards in the pile
+      const offset = 2; // Adjust this value to increase or decrease the offset
+      card.style.position = 'absolute';
+      card.style.top = `${cardsInPile * offset}px`;
+      card.style.left = `${cardsInPile * offset}px`;
+  
+      usedCardsPile.appendChild(card);
+    }
+  }
+  
+
+
 function formatCardText(text) {
   // If the text is 15 characters or less, return it as is
   if (text.length <= 15) return text;
