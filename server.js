@@ -37,12 +37,19 @@ let nameIndex = 0;
 let players = {}; // Object to store players and their aliases
 let currentGameId; // Game ID will be set when a player connects
 let cardTexts = {}; // Object to store texts for each card
-let gameLog = []; // Array to store game log messages
 
 // Utility Functions
 function generateGameId() {
-  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+  // Generate a unique game ID
+  const gameId = Date.now().toString(36) + Math.random().toString(36).substr(2);
+
+  // Display a successful console message
+  console.log('Generated game ID:', gameId);
+
+  return gameId; // Return the generated game ID
 }
+
+
 
 function generateCardText(deckIndex) {
   try {
@@ -62,10 +69,10 @@ function generateCardText(deckIndex) {
 
 // Socket.io Event Handlers
 io.on("connection", (socket) => {
-  console.log(`Current game ID: ${currentGameId}`);
   // Generate a new game ID only when a new player connects
   if (!currentGameId) {
     currentGameId = generateGameId();
+    console.log(`Current game ID: ${currentGameId}`);
   }
 
   const userName = animalNames[nameIndex % animalNames.length];
@@ -74,13 +81,15 @@ io.on("connection", (socket) => {
   console.log(`${userName} connected`);
 
   // Send initial data to the newly connected client
-  io.to(socket.id).emit("resetDecks", currentGameId);
-  io.to(socket.id).emit("logHistory", gameLog);
+  // io.to(socket.id).emit("resetDecks", currentGameId);
   io.to(socket.id).emit("yourUserName", userName);
 
   // Update the player list for all clients
   io.emit("updatePlayerList", Object.values(players));
   io.emit("playerConnected", userName);
+
+    // Emit the resetDecks event to all clients when a new player joins
+    handleResetDecks();
 
   // Event: Card Moved
   socket.on("cardMoved", (data) => {
@@ -97,26 +106,12 @@ io.on("connection", (socket) => {
     handleResetDecks(socket, userName);
   });
 
-  // Event: Auto Place Card
-  socket.on("autoPlaceCard", (data) => {
-    handleAutoPlaceCard(socket, userName, data);
-  });
-
-  // Event: Flip All Cards
-  socket.on("flipAllCards", (data) => {
-    handleFlipAllCards(socket, userName, data);
-  });
 
   // Event: Request Card Text
   socket.on("requestCardText", (data) => {
     handleRequestCardText(socket, data);
   });
 
-  // Event: Clear Log
-  socket.on("clearLog", () => {
-    gameLog = []; // Clear the log
-    io.emit("logCleared"); // Notify all clients to clear their logs
-  });
 
   // Event: Disconnect
   socket.on("disconnect", () => {
@@ -128,55 +123,51 @@ io.on("connection", (socket) => {
 
 // Event Handler Functions
 function handleCardMoved(socket, userName, data) {
-  const logMessage = `${userName} moved a card`;
-  gameLog.push(logMessage);
   io.emit("cardMoved", data);
+  console.log(`Card with ID ${data.cardId} was moved by ${userName}`);
 }
 
 function handleFlipCard(socket, userName, data) {
-  const logMessage = `Card ${data.cardId} was flipped by ${userName}`;
-  gameLog.push(logMessage);
   socket.broadcast.emit("flipCard", data);
+  console.log(`Card with ID ${data.cardId} was flipped by ${userName}`);
 }
 
 function handleResetDecks(socket, userName) {
-  const logMessage = `${userName} reset the decks`;
-  gameLog.push(logMessage);
-  console.log(`resetDecks received from user: ${userName}`);
   // Clear the card texts to ensure new ones are generated
   cardTexts = {};
   io.emit("resetDecks", currentGameId);
+  console.log(`Decks reset for all players!`);
 }
 
-function handleAutoPlaceCard(socket, userName, data) {
-  const logMessage = `${userName} auto placed a card`;
-  gameLog.push(logMessage);
-  io.emit("autoPlaceCard", data);
-}
-
-function handleFlipAllCards(socket, userName, data) {
-  const logMessage = `${userName} flipped all cards`;
-  gameLog.push(logMessage);
-  socket.broadcast.emit("flipAllCards", data);
-}
 
 function handleRequestCardText(socket, data) {
   let text;
+  let logMessage; // Variable to store the log message
+
   if (cardTexts[data.cardId]) {
     text = cardTexts[data.cardId];
+    logMessage = `Card text for card ID ${data.cardId} already exists. Sending existing text.`;
   } else {
     text = generateCardText(data.deckIndex);
     cardTexts[data.cardId] = text;
+    logMessage = `Generated new card text for card ID ${data.cardId} from deck index ${data.deckIndex}.`;
   }
+  console.log(logMessage); // Log the message
   io.emit("cardText", { cardId: data.cardId, text: text });
 }
 
 function handleDisconnect(socket, userName) {
-  console.log(`${userName} disconnected`);
-  delete players[socket.id];
-  io.emit("updatePlayerList", Object.values(players));
-  io.emit("playerDisconnected", userName);
+  console.log(`${userName} disconnected. Removing from players list.`); // Log when a user disconnects
+
+  delete players[socket.id]; // Remove the player from the players list
+  console.log(`Updated players list after disconnection: ${Object.values(players).join(', ')}`); // Log the updated players list
+
+  io.emit("updatePlayerList", Object.values(players)); // Update player list for all clients
+  io.emit("playerDisconnected", userName); // Notify all clients about the disconnection
+
+  console.log(`Notified all clients about the disconnection of ${userName}.`); // Log notification to all clients
 }
+
 
 // Start the server
 const PORT = process.env.PORT || 4000;

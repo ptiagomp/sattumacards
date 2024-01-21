@@ -103,5 +103,7 @@ function bindEventListeners() {
   );
 }
 
+
+
 // DOM Content Loading
 document.addEventListener("DOMContentLoaded", bindEventListeners);
