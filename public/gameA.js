@@ -92,7 +92,6 @@ function createCard(deck, index, cardIndex) {
   const front = document.createElement("div");
   front.className = "front";
   front.style.backgroundImage = "url('./back_card_imgs/sattuma-bkg.png')";
-  // front.style.backgroundImage = `url('./back_card_imgs/${deckImages[index]}')`;
   front.style.backgroundSize = "cover";
   front.style.backgroundColor = "#939598";
 
@@ -100,9 +99,22 @@ function createCard(deck, index, cardIndex) {
   const back = document.createElement("div");
   back.className = "back";
   back.style.backgroundImage = `url('./front_card_img/${deckImages[index]}')`;
-  // back.style.backgroundImage = "url('./front_card_img/front_draw.webp')";
   back.style.backgroundSize = "cover";
   back.style.backgroundColor = "white";
+
+  console.log(`card ${index} on deck ${deck} created!`);
+
+
+
+  // Append front and back to the card, and the card to the deck
+  card.append(front, back);
+  deck.appendChild(card);
+
+
+  
+
+  // Load a random text on the card
+  loadRandomWord(index, card);
 
   card.addEventListener("dblclick", () => {
     if (!isInUsedCardsPile(card)) {
@@ -110,23 +122,15 @@ function createCard(deck, index, cardIndex) {
     }
   });
   
+    // Add click event listener for card flip
+    card.addEventListener("click", () => {
+      if (!isInUsedCardsPile(card)) {
+        console.log("Flip event");
+        card.classList.toggle("flip");
+        socket.emit("flipCard", { cardId: card.id });
+      }
+    });
 
-  // Append front and back to the card, and the card to the deck
-  card.append(front, back);
-  deck.appendChild(card);
-
-  // Add click event listener for card flip
-  card.addEventListener("click", () => {
-    if (!isInUsedCardsPile(card)) {
-      console.log("Flip event");
-      card.classList.toggle("flip");
-      socket.emit("flipCard", { cardId: card.id });
-    }
-  });
-  
-
-  // Load a random text on the card
-  loadRandomWord(index, card);
 }
 
 function isInUsedCardsPile(card) {

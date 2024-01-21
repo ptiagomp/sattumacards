@@ -11,3 +11,11 @@ Kävely, siirtymä tai lenkki
 Yhteistyötila / monitilatoimisto
 Metsä
 Parveke / Piha
+tila1
+tila2
+tila3
+tila4
+tila5
+tila6
+tila7
+tila8

@@ -16,3 +16,6 @@ Liitutaulu
 Paperia, kyniä
 Pöytiä, tuoleja
 Materiaaleja erilaisista lautapeleistä
+resurssit1
+resurssit2
+resurssit3

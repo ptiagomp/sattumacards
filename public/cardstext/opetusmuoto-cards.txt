@@ -10,3 +10,12 @@ Vieraileva opettaja
 Ryhmäopetus
 Itsenäinen opiskelu (opiskelumuoto)
 Yksilöopetus
+opetusmuoto1
+opetusmuoto2
+opetusmuoto3
+opetusmuoto4
+opetusmuoto5
+opetusmuoto6
+opetusmuoto7
+opetusmuoto8
+opetusmuoto9
