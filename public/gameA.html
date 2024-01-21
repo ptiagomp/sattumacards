@@ -1,13 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./imgs/favicon.ico" type="image/x-icon">
     <title>Sattuma</title>
     <link rel="stylesheet" href="gameA.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
   </head>
+
   <body>
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+        <div class="menu-icon" onclick="toggleMenu()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="menu-content" id="menuContent">
+          <ul>
+            <li onclick="openModal('instructionsModal')">Pelin ohjeet</li>
+            <li onclick="openModal('historyModal')">Viitteet ja historia</li>
+            <li onclick="openModal('contactsModal')">Yhteystiedot</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Modals for Menu Items -->
+      <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('instructionsModal')">
+            &times;
+          </span>
+          <h2>Pelin ohjeet</h2>
+          <p id="instructionsContent">
+            <!-- Instructions content will be loaded here -->
+          </p>
+        </div>
+      </div>
+      <div id="historyModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('historyModal')">
+            &times;
+          </span>
+          <h2>Viitteet ja historia</h2>
+          <p id="historyContent">
+            <!-- History content will be loaded here -->
+          </p>
+        </div>
+      </div>
+      <div id="contactsModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('contactsModal')">
+            &times;
+          </span>
+          <h2>Yhteystiedot</h2>
+          <p id="contactsContent">
+            <!-- Contacts content will be loaded here -->
+          </p>
+        </div>
+      </div>
+      <div class="title">
+      <img src="./imgs/sattuma-text-img.webp" alt="Sattuma" class="title-image"/>
+      </div>
+
+      <div class="button-container">
+
+        <!-- Home Button with an image inside -->
+        <button class="button-arounder" onclick="window.location.href='index.html';">
+          <img src="./imgs/sattuma-logo.webp" alt="Sattuma" />
+        </button>
+  
+        <!-- Reset Button -->
+        <button class="button-arounder" id="resetBtn">
+          Sekoita kortit
+        </button>
+  
+        <!-- Background Color Selector -->
+        <select id="backgroundColorSelector" style="background-color:#1e272e; color: #bcbfc1;">
+          <!-- Standard Colors -->
+          <option value="default">Oletus</option>
+          <option value="purple">Violetti</option>
+          <option value="candypink">Karkkipinkki</option>
+          <option value="softplum">Mieto luumu</option>
+          <option value="softlavender">Mieto laventeli</option>
+          <option value="seagreen">Merenvihreä</option>
+  
+          <!-- Gradient Colors -->
+          <option value="ocean">Valtameri</option>
+          <option value="bloodorange">Veriappelsiini</option>
+          <option value="antarctica">Antarktis</option>
+          <option value="dusk">Hämärä</option>
+          <option value="negative">Negatiivinen vaikutus</option>
+        </select>
+      </div>
+
     <!-- Deck Container -->
     <div class="deck-container">
       <div class="deck" id="deck1" title="Tilanne"></div>
@@ -29,96 +118,29 @@
     </div>
 
     <div class="used-cards-container">
+        <div class="used-cards-label">Käytetyt kortit</div>
         <div class="used-cards" id="usedCardsPile"></div>
-        <div class="used-cards-label">Used Cards</div>
       </div>
-      
-    
 
-    <div class="button-container">
-      <!-- Info Button -->
-      <button id="infoBtn" title="Pelin ohjeet">
-        &#9432;
-        <!-- Info icon -->
-      </button>
-
-      <!-- Home Button with an image inside -->
-      <button
-        id="homeBtn"
-        title="Takaisin päävalikkoon."
-        onclick="window.location.href='index.html';"
-        class="image-button"
-      >
-        <img src="./imgs/sattuma-logo.webp" alt="Sattuma" />
-      </button>
-
-      <!-- Reset Button -->
-      <button id="resetBtn" title="Resetoi ja sekoita kortit.">
-        Sekoita Kortit
-      </button>
-
-      <!-- Background Color Selector -->
-      <select id="backgroundColorSelector" title="Vaihda taustaväri">
-        <!-- Standard Colors -->
-        <option value="default">Oletus</option>
-        <option value="purple">Violetti</option>
-        <option value="candypink">Karkkipinkki</option>
-        <option value="softplum">Mieto Luumu</option>
-        <option value="softlavender">Mieto Laventeli</option>
-        <option value="seagreen">Merenvihreä</option>
-
-        <!-- Gradient Colors -->
-        <option value="ocean">Valtameri</option>
-        <option value="bloodorange">Veriappelsiini</option>
-        <option value="antarctica">Antarktis</option>
-        <option value="dusk">Hämärä</option>
-        <option value="negative">Negatiivinen Vaikutus</option>
-      </select>
-    </div>
-
-    <!-- Info Popup Modal -->
-    <div id="infoModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3>Pelin ohjeet</h3>
-        <h5>Tiimi A:</h5>
-        <p>
-          Jokainen pelaaja saa 5 korttia yhdestä pakasta. Ensimmäisellä
-          kierroksella jokainen pelaaja pelaa yhden kortin asettamalla sen
-          pöydälle. Toisella kierroksella asettaessaan seuraavan kortin pöydälle
-          jokainen pelaaja kertoo vuorollaan tarinan liittyen
-          opetustilanteeseen. Vähintään kaksi kierrosta, lisäkierros on
-          mahdollinen. Satunnaiset kortit sisältyvät samaan pakkaan.
-        </p>
-        <h5>Tiimi B:</h5>
-        <p>
-          Pelissä on 2 pakkaa. Pelipakka ja satunnaisen tapahtuman pakka.
-          Pelipakasta otetaan yhteensä 3 korttia ja niistä luodaan tarina
-          opetustilanteesta. Sen jälkeen otetaan kortti satunnaisen tapahtuman
-          pakasta, ja keskustellaan sen vaikutuksesta opetustilanteen tarinaan.
-          Satunnaisen tapahtuman pakasta voi ottaa kortin kolme kertaa.
-        </p>
-        <h5>Lisäkestävyyspeli:</h5>
-        <p>
-          "Tämä tarina on totta" -kokemus pelataan korteilla, ja se vahvistuu
-          kuviteltaessa satunnaisen tapahtumakortin vaikutusta. (<em
-            >sisältyykö projektin lopullisiin huomioihin?</em
-          >)
-        </p>
-      </div>
-    </div>
+ 
 
     <!-- Player List and Game Console Container -->
     <div class="info-console-container">
       <div class="game-info-container">
         <div class="game-id-section">
-          <div id="gameIdDisplay">Pelin ID:</div>
+          <div id="gameIdDisplay"></div>
         </div>
         <ul id="playersList">
-          <p>Pelissa:</p>
+          <p></p>
           <!-- Players will be listed here -->
         </ul>
       </div>
+    </div>
+
+    <!-- Resolution Warning -->
+    <div id="resolution-warning" style="display: none">
+        <p>Optimoi ikkunan koko: 1200x830 tai suurempi.<br />Säädä ikkunan kokoa, kunnes viesti katoaa.</p>
+        <button style="background-color: #ffd700; color: #1e272e; padding: 10px 20px; border: none; cursor: pointer;" onclick="document.getElementById('resolution-warning').style.display='none'">Sulje</button>
     </div>
 
     <!-- Scripts -->

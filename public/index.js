@@ -53,8 +53,8 @@ function loadModalContent(modalId, contentId, filePath) {
 
 // Function to handle window resize
 function handleWindowResize() {
-  const minWidth = 1024;
-  const minHeight = 768;
+  const minWidth = 1200;
+  const minHeight = 830;
   const width = window.innerWidth;
   const height = window.innerHeight;
   const resolutionWarning = document.getElementById("resolution-warning");
