@@ -128,10 +128,10 @@ function createDeck(deck, index) {
 
   // Create 10 cards with a staggered delay
   for (let i = 0; i < 10; i++) {
-    setTimeout(() => {
+    // setTimeout(() => {
       createCard(deck, index, i);
       console.log(`Created card ${i} in deck ${index}.`);
-    }, i * 100);
+    // }, i * 100);
   }
 
   console.log(`Finished creating deck at index ${index}.`);
@@ -391,22 +391,22 @@ function setupButtonHandlers() {
   resetBtn.addEventListener("click", () => {
     console.log("Reset button clicked. Starting fade-out animation for cards.");
 
-    // Step 1: Apply a fade-out effect to all cards in each dropzone
-    dropzones.forEach((dropzone) => {
-      // Select all cards within the current dropzone
-      const cards = dropzone.querySelectorAll(".card");
-      // Add the 'fade-out' class to each card to initiate the fade-out effect
-      cards.forEach((card) => {
-        card.classList.add("fade-out");
-      });
-    });
+    // // Step 1: Apply a fade-out effect to all cards in each dropzone
+    // dropzones.forEach((dropzone) => {
+    //   // Select all cards within the current dropzone
+    //   const cards = dropzone.querySelectorAll(".card");
+    //   // Add the 'fade-out' class to each card to initiate the fade-out effect
+    //   cards.forEach((card) => {
+    //     card.classList.add("fade-out");
+    //   });
+    // });
 
-    // Step 2: Wait for the fade-out animation to complete before resetting
-    setTimeout(() => {
-      console.log("Fade-out animation completed. Reloading the page.");
+    // // Step 2: Wait for the fade-out animation to complete before resetting
+    // setTimeout(() => {
+    //   console.log("Fade-out animation completed. Reloading the page.");
       // Reload the page after the fade-out animations have completed
       location.reload();
-    }, 500); // The timeout duration should match the CSS animation duration
+    // }, 500); // The timeout duration should match the CSS animation duration
   });
 }
 

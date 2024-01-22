@@ -221,6 +221,7 @@ img {
   display: flex;
   gap: 30px;
   margin-bottom: 15px;
+  animation: fadeInAnimation 0.5s ease-in;
 }
 
 /* Deck Styles */
@@ -247,7 +248,7 @@ img {
   transform-style: preserve-3d;
   transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1),
     top 0.5s cubic-bezier(0.42, 0, 0.58, 1);
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
@@ -255,6 +256,8 @@ img {
   font-weight: bold;
   transform: translate(0, -100px) rotateY(0deg);
 }
+
+
 
 .card.dragging .back {
   visibility: hidden;
@@ -371,6 +374,52 @@ img {
     opacity: 0;
   }
 }
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card:nth-child(1) {
+  animation: fadeInAnimation 0.5s ease 0.1s forwards; /* Delay for the first card */
+}
+
+.card:nth-child(2) {
+  animation: fadeInAnimation 0.5s ease 0.2s forwards; /* Delay for the second card */
+}
+.card:nth-child(3) {
+  animation: fadeInAnimation 0.5s ease 0.3s forwards; /* Delay for the first card */
+}
+
+.card:nth-child(4) {
+  animation: fadeInAnimation 0.5s ease 0.4s forwards; /* Delay for the second card */
+}
+.card:nth-child(5) {
+  animation: fadeInAnimation 0.5s ease 0.5s forwards; /* Delay for the first card */
+}
+
+.card:nth-child(6) {
+  animation: fadeInAnimation 0.5s ease 0.6s forwards; /* Delay for the second card */
+}
+.card:nth-child(7) {
+  animation: fadeInAnimation 0.5s ease 0.7s forwards; /* Delay for the first card */
+}
+
+.card:nth-child(8) {
+  animation: fadeInAnimation 0.5s ease 0.8s forwards; /* Delay for the second card */
+}
+.card:nth-child(9) {
+  animation: fadeInAnimation 0.5s ease 0.9s forwards; /* Delay for the first card */
+}
+
+.card:nth-child(10) {
+  animation: fadeInAnimation 0.5s ease 1s forwards; /* Delay for the second card */
+}
+
 
 
 
@@ -519,8 +568,8 @@ img {
 
 #resolution-warning {
     position: fixed;
-    top: 10%;
-    left: 50%;
+    bottom: 10%;
+    left: 20%;
     transform: translateX(-50%);
     background-color: #1e272e;
     opacity: 0.8;
