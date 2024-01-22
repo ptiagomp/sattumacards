@@ -53,19 +53,22 @@ function generateGameId() {
 
 function generateCardText(deckIndex) {
   try {
-    const filePath = path.join(
-      __dirname,
-      "public/cardstext",
-      deckFiles[deckIndex]
-    );
+    const filePath = path.join(__dirname, "public/cardstext", deckFiles[deckIndex]);
     const data = fs.readFileSync(filePath, "utf8");
     const words = data.split("\n");
-    return words[Math.floor(Math.random() * words.length)].trim();
+
+    if (words.length > 0) {
+      return words[Math.floor(Math.random() * words.length)].trim();
+    } else {
+      console.error(`Deck file ${deckFiles[deckIndex]} is empty.`);
+      return "No text available for this card"; // Provide a default message for empty cards
+    }
   } catch (error) {
     console.error(`Failed to fetch data for deck ${deckIndex}:`, error);
-    return ""; // Return an empty string or some default text in case of an error
+    return "Error fetching card text"; // Provide a default message for errors
   }
 }
+
 
 // Socket.io Event Handlers
 io.on("connection", (socket) => {
