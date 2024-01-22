@@ -112,6 +112,11 @@ io.on("connection", (socket) => {
     handleRequestCardText(socket, data);
   });
 
+  // Inside the connection event
+socket.on("cursorMove", (data) => {
+  handleCursorMove(socket, data);
+});
+
 
   // Event: Disconnect
   socket.on("disconnect", () => {
@@ -137,6 +142,11 @@ function handleResetDecks(socket, userName) {
   cardTexts = {};
   io.emit("resetDecks", currentGameId);
   console.log(`Decks reset for all players!`);
+}
+
+function handleCursorMove(socket, data) {
+  socket.broadcast.emit("cursorUpdate", data);
+  console.log(`Cursor moved by ${data.userId} to position x:${data.x}, y:${data.y}`);
 }
 
 
@@ -166,7 +176,9 @@ function handleDisconnect(socket, userName) {
   io.emit("playerDisconnected", userName); // Notify all clients about the disconnection
 
   console.log(`Notified all clients about the disconnection of ${userName}.`); // Log notification to all clients
+  socket.broadcast.emit("playerDisconnected", userName);
 }
+
 
 
 // Start the server

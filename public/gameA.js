@@ -1,5 +1,6 @@
 // Global Variables
 
+const cursorColors = ["red", "blue", "green", "orange", "purple", "pink", "yellow", "cyan", "magenta", "brown"];
 const socket = io(); // Socket.io instance for real-time communication
 let myUserName = ""; // Variable to store the username of the current user
 
@@ -11,6 +12,76 @@ document.addEventListener("DOMContentLoaded", function () {
   setupDragAndDrop(); // Initialize drag and drop functionality
   setupButtonHandlers(); // Set up button event handlers
 });
+
+document.addEventListener('mousemove', throttle((event) => {
+  socket.emit('cursorMove', { x: event.pageX, y: event.pageY, userId: myUserName, userName: myUserName });
+}, 100));
+
+socket.on('cursorUpdate', (data) => {
+  renderCursor(data);
+});
+
+socket.on('playerDisconnected', (userId) => {
+  const cursor = document.getElementById(`cursor-${userId}`);
+  if (cursor) {
+      cursor.remove();
+  }
+});
+
+// 4. Implement the `renderCursor` Function:
+// Create a function to render or update the cursor elements on the page.
+
+
+function renderCursor(data) {
+  let cursor = document.getElementById(`cursor-${data.userId}`);
+  if (!cursor) {
+      cursor = document.createElement('div');
+      cursor.id = `cursor-${data.userId}`;
+      cursor.classList.add('cursor');
+
+      // Create a label for the username
+      const label = document.createElement('span');
+      label.textContent = data.userName;
+      label.classList.add('cursor-label');
+
+      cursor.appendChild(label);
+      document.body.appendChild(cursor);
+  }
+  cursor.style.left = `${data.x}px`;
+  cursor.style.top = `${data.y}px`;
+
+  // Assign a color based on the username or some unique identifier
+  const colorIndex = Math.abs(hashCode(data.userId)) % cursorColors.length;
+  cursor.style.backgroundColor = cursorColors[colorIndex];
+}
+
+
+// Hash function to generate a number from a string (for color assignment)
+function hashCode(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
+}
+
+
+function throttle(callback, limit) {
+  let waiting = false;
+  return function () {
+      if (!waiting) {
+          callback.apply(this, arguments);
+          waiting = true;
+          setTimeout(() => {
+              waiting = false;
+          }, limit);
+      }
+  };
+}
+
+
 
 // DOM Elements
 const decks = document.querySelectorAll(".deck"); // Collection of all decks

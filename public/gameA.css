@@ -536,6 +536,29 @@ img {
 /* ----------------------------------------- */
 
 
+.cursor {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+
+.cursor-label {
+  position: absolute;
+  bottom: -20px;
+  white-space: nowrap;
+  font-size: 10px;
+  color: black;
+  background-color: lightgrey;
+  font-family: "Roboto", sans-serif;
+}
+
 
 
 
