@@ -49,8 +49,6 @@ function generateGameId() {
   return gameId; // Return the generated game ID
 }
 
-
-
 function generateCardText(deckIndex) {
   try {
     const filePath = path.join(__dirname, "public/cardstext", deckFiles[deckIndex]);
@@ -68,7 +66,6 @@ function generateCardText(deckIndex) {
     return "Error fetching card text"; // Provide a default message for errors
   }
 }
-
 
 // Socket.io Event Handlers
 io.on("connection", (socket) => {
@@ -109,7 +106,6 @@ io.on("connection", (socket) => {
     handleResetDecks(socket, userName);
   });
 
-
   // Event: Request Card Text
   socket.on("requestCardText", (data) => {
     handleRequestCardText(socket, data);
@@ -119,7 +115,6 @@ io.on("connection", (socket) => {
 socket.on("cursorMove", (data) => {
   handleCursorMove(socket, data);
 });
-
 
   // Event: Disconnect
   socket.on("disconnect", () => {
@@ -152,7 +147,6 @@ function handleCursorMove(socket, data) {
   console.log(`Cursor moved by ${data.userId} to position x:${data.x}, y:${data.y}`);
 }
 
-
 function handleRequestCardText(socket, data) {
   let text;
   let logMessage; // Variable to store the log message
@@ -181,8 +175,6 @@ function handleDisconnect(socket, userName) {
   console.log(`Notified all clients about the disconnection of ${userName}.`); // Log notification to all clients
   socket.broadcast.emit("playerDisconnected", userName);
 }
-
-
 
 // Start the server
 const PORT = process.env.PORT || 4000;
