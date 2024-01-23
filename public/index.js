@@ -19,8 +19,6 @@ window.onclick = function(event) {
   }
 };
 
-
-
 function toggleMenu() {
   var menuIcon = document.querySelector(".menu-icon");
   menuIcon.classList.toggle("open");
@@ -102,8 +100,6 @@ function bindEventListeners() {
     "./text-instruct/yhteystiedot-main.txt"
   );
 }
-
-
 
 // DOM Content Loading
 document.addEventListener("DOMContentLoaded", bindEventListeners);
