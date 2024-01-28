@@ -193,7 +193,7 @@ function createCard(deck, index, cardIndex) {
   // Create the front side of the card
   const front = document.createElement("div");
   front.className = "front";
-  front.style.backgroundImage = "url('./back_card_imgs/sattuma-bkg.png')";
+  front.style.backgroundImage = "url('./back_card_imgs/sattuma-bkg.webp')";
   front.style.backgroundSize = "cover";
   front.style.backgroundColor = "#939598";
 
