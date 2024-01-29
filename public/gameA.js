@@ -193,16 +193,14 @@ function createCard(deck, index, cardIndex) {
   // Create the front side of the card
   const front = document.createElement("div");
   front.className = "front";
-  front.style.backgroundImage = "url('./back_card_imgs/sattuma-bkg.webp')";
-  front.style.backgroundSize = "cover";
-  front.style.backgroundColor = "#939598";
+  front.style = `background-image: url('./back_card_imgs/sattuma-bkg.webp'); 
+  background-size: cover; background-color: #939598;`;
 
   // Create the back side of the card
   const back = document.createElement("div");
   back.className = "back";
-  back.style.backgroundImage = `url('./front_card_img/${deckImages[index]}')`;
-  back.style.backgroundSize = "cover";
-  back.style.backgroundColor = "white";
+  back.style = `background-image: url('./front_card_img/${deckImages[index]}'); 
+  background-size: cover; background-color: white;`;
 
   console.log(`Card ${cardIndex} created in deck ${index} (ID: ${deck.id})`);
 
@@ -218,66 +216,15 @@ function createCard(deck, index, cardIndex) {
   // Load a random text on the card
   loadRandomWord(index, card);
 
-  card.addEventListener("dblclick", () => {
-    if (!isInUsedCardsPile(card)) {
-      moveToUsedCardsPile(card);
-    }
-  });
-  
+
     // Add click event listener for card flip
-    card.addEventListener("click", () => {
-      if (!isInUsedCardsPile(card)) {
-        console.log("Flip event");
-        card.classList.toggle("flip");
-        socket.emit("flipCard", { cardId: card.id });
-      }
+    card.addEventListener("dblclick", () => {
+    console.log("Flip event");
+    card.classList.toggle("flip");
+    socket.emit("flipCard", { cardId: card.id });
     });
 
 }
-
-function isInUsedCardsPile(card) {
-  const usedCardsPile = document.getElementById("usedCardsPile");
-
-  // Check if the card is in the used cards pile
-  const isInPile = usedCardsPile.contains(card);
-
-  // Log the result along with the card's ID (or other identifying property)
-  console.log(`Card ${card.id} is in used cards pile: ${isInPile}`);
-
-  return isInPile;
-}
-
-  
-  
-
-
-function moveToUsedCardsPile(card) {
-  const usedCardsPile = document.getElementById("usedCardsPile");
-
-  if (usedCardsPile) {
-    // Check if the card is not flipped
-    if (!card.classList.contains("flip")) {
-      // Flip the card
-      card.classList.add("flip");
-    }
-
-    // Calculate the number of cards in the pile
-    const cardsInPile = usedCardsPile.children.length;
-
-    // Log the card being moved and the number of cards in the pile
-    console.log(`Moving card with ID '${card.id}' to used cards pile. Number of cards in pile before move: ${cardsInPile}`);
-
-    // Set the position of the card based on the number of cards in the pile
-    const offset = 2; // Adjust this value to increase or decrease the offset
-    card.style.position = 'absolute';
-    card.style.top = `${cardsInPile * offset}px`;
-    card.style.left = `${cardsInPile * offset}px`;
-
-    usedCardsPile.appendChild(card);
-  }
-}
-
-  
 
 
 function formatCardText(text) {
@@ -494,11 +441,10 @@ socket.on("cardText", function (data) {
 // -------------------------------------------------------------------------------------------------------------------- all console messafes done above
 
 // Event listener for flipping a card
-socket.on("flipCard", function (data) {
+socket.on('flipCard', function(data) {
   const card = document.getElementById(data.cardId);
   if (card) {
-    // Toggle the 'flip' class to flip the card
-    card.classList.toggle("flip");
+      card.classList.toggle('flip');
   }
 });
 
