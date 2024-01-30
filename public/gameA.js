@@ -488,7 +488,6 @@ const colorMappings = {
   purple: "#957DAD",
   candypink: "#D291BC",
   softplum: "#A99ABD",
-  softlavender: "#E0E3F4",
   seagreen: "#6ABCAF",
   ocean: "linear-gradient(to right, #2E3192, #1BFFFF)",
   bloodorange: "linear-gradient(to right, #D4145A, #FBB03B)",

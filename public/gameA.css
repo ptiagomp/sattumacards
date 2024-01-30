@@ -9,7 +9,6 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 100px;
 }
 /* ----------------------------------------- */
  /* Burger Menu Styles */
@@ -111,12 +110,14 @@ body {
 /* ----------------------------------------- */  
 
 .title {
-  position: fixed;
+  position: static;
   display: flex;
   top: 10px; /* Adjust this value as needed */
   width: 100%; /* To center the image */
   text-align: center; /* To center the image inside the div */
   justify-content: center;
+  margin-bottom: 150px;
+  margin-top: 50px;
 }
 
 
@@ -143,11 +144,11 @@ body {
 /* Button Container Styles */
 .button-container {
   position: static;
-
   display: flex;
   gap: 10px;
   margin-top: 20px;
   justify-content: center;
+  align-items: center;
   }
 
 button {
