@@ -9,6 +9,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  animation: fadeInAnimation 0.5s ease-in;
 }
 /* ----------------------------------------- */
  /* Burger Menu Styles */
@@ -215,7 +216,7 @@ img {
   display: flex;
   gap: 30px;
   margin-bottom: 15px;
-  animation: fadeInAnimation 0.5s ease-in;
+  /* animation: fadeInAnimation 0.5s ease-in; */
 }
 
 /* Deck Styles */
@@ -366,50 +367,15 @@ img {
   }
 } */
 
-/* @keyframes fadeInAnimation {
+@keyframes fadeInAnimation {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
-} */
-
-.card:nth-child(1) {
-  animation: fadeInAnimation 0.5s ease 0.1s forwards; /* Delay for the first card */
 }
 
-.card:nth-child(2) {
-  animation: fadeInAnimation 0.5s ease 0.2s forwards; /* Delay for the second card */
-}
-.card:nth-child(3) {
-  animation: fadeInAnimation 0.5s ease 0.3s forwards; /* Delay for the first card */
-}
-
-.card:nth-child(4) {
-  animation: fadeInAnimation 0.5s ease 0.4s forwards; /* Delay for the second card */
-}
-.card:nth-child(5) {
-  animation: fadeInAnimation 0.5s ease 0.5s forwards; /* Delay for the first card */
-}
-
-.card:nth-child(6) {
-  animation: fadeInAnimation 0.5s ease 0.6s forwards; /* Delay for the second card */
-}
-.card:nth-child(7) {
-  animation: fadeInAnimation 0.5s ease 0.7s forwards; /* Delay for the first card */
-}
-
-.card:nth-child(8) {
-  animation: fadeInAnimation 0.5s ease 0.8s forwards; /* Delay for the second card */
-}
-.card:nth-child(9) {
-  animation: fadeInAnimation 0.5s ease 0.9s forwards; /* Delay for the first card */
-}
-
-.card:nth-child(10) {
-  animation: fadeInAnimation 0.5s ease 1s forwards; /* Delay for the second card */
-}
 
 
 
