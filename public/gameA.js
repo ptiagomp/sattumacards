@@ -218,7 +218,7 @@ function createCard(deck, index, cardIndex) {
 
 
     // Add click event listener for card flip
-    card.addEventListener("dblclick", () => {
+    card.addEventListener("click", () => {
     console.log("Flip event");
     card.classList.toggle("flip");
     socket.emit("flipCard", { cardId: card.id });

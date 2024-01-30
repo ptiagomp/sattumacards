@@ -1,21 +1,18 @@
-Zoom (videokokous)
-Chat (pikaviesti)
-Moodle (verkkosivusto)
-Miro (whiteboard)
-Keskustelupalvelin (mitä tarkoittaa?)
+Videokokous
+Pikaviestisovellus
+Oppimisalusta
+Virtuaalisen yhteistyön alusta
+Liitutaulu
 Jaettu dokumentti
 Jaettu esitys
+Useampi opetustila
 Verkkokysely
-Miellekartta (mind map)
-Jaettu fyysinen tila
-Tekstistä kuvaksi -tekoälysovellus
-Tekstistä tekstiksi -tekoälysovellus
-Useita kiinteitä tai liikuteltavia näyttöpäätteitä/kameroita/konferenssikaiuttimia
+Miellekartta
+Generatiivisen tekoälyn sovellus
 Videotallenne
-Liitutaulu
-Paperia, kyniä
-Pöytiä, tuoleja
+Useita näyttöjä / kameroita / kaiuttimia
+Materiaaleja lähialueilta
+Assistentti avuksi
+Paperia / kyniä
+Pöytiä / tuoleja
 Materiaaleja erilaisista lautapeleistä
-resurssit1
-resurssit2
-resurssit3

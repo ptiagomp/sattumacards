@@ -1,21 +1,13 @@
 Luokkahuone
 Luentosali
 Hybridi
-Verkkokokous
-Bussissa
-Lentokentän kahvila
+Etäkokous
+Linja-auto
+Kahvila
 Laiturinnokka
 Koti
 Työhuone
-Kävely, siirtymä tai lenkki
-Yhteistyötila / monitilatoimisto
+Kävely tai muu siirtymä
+Yhteistyötila tai monitilatoimisto
 Metsä
-Parveke / Piha
-tila1
-tila2
-tila3
-tila4
-tila5
-tila6
-tila7
-tila8
+Parveke tai piha

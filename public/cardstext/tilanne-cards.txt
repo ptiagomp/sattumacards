@@ -1,21 +1,14 @@
-Passiivisuus
-Aktiivisuus
+Passiivinen
+Aktiivinen
 Epävarma
 Vaihteleva
 Ääni ei kuulu
-Sekalainen tai monialainen ryhmä
+Sekalainen / monialainen ryhmä
 Yhtenäinen ryhmä
-Monikielinen opetus
+Monikielinen
 Opiskelijoilla erityistarpeita
-Hyperaktiivisuus
-Väsymys
-Arvaamattomuus
-tillane1
-tillane2
-tillane3
-tillane4
-tillane5
-tillane6
-tillane7
-tillane8
-tillane9
+Hyperaktiivinen
+Väsynyt
+Arvaamaton
+Motivaatio korkea
+Motivaatio matala
