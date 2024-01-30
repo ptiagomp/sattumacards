@@ -1,3 +1,8 @@
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque lacus sit amet odio placerat, sed dignissim nisi mollis. Sed vestibulum ante neque, id imperdiet purus ultrices non. Ut feugiat, diam et eleifend laoreet, neque nunc accumsan sapien, sit amet consectetur massa neque vel diam. Integer et magna lectus. Ut arcu ex, malesuada quis neque in, lobortis aliquet lorem. Vestibulum eget turpis ex. Proin mollis erat ac nunc scelerisque elementum. Nulla ut cursus nisi. Fusce vestibulum, elit vitae sollicitudin malesuada, ipsum nisi consequat tortor, ac tincidunt diam sapien vel nisi. Suspendisse suscipit a metus faucibus tincidunt. Proin tincidunt tincidunt risus, sit amet bibendum sapien elementum quis. Phasellus dignissim posuere metus, vel tincidunt augue dictum nec.</p>
-<img src="./imgs/sattuma-logo.webp" alt="testimage">
-<p>Etiam fermentum tellus pretium felis sollicitudin, nec aliquet justo ultricies. Mauris volutpat libero quis placerat finibus. Vestibulum vitae posuere velit. Sed scelerisque metus a rhoncus auctor. Proin sed nulla eu elit porta malesuada quis nec ex. Pellentesque non rutrum arcu. Aliquam in dui vitae felis pulvinar volutpat. Nulla eget dignissim eros, eget ultrices sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et leo eu ex tincidunt fermentum nec id purus. Etiam dui purus, imperdiet a justo non, finibus sodales nisi. Nulla faucibus magna vel velit pellentesque, pharetra tincidunt lacus lacinia. Aliquam sollicitudin ultricies tortor, ac eleifend dui commodo nec. Praesent suscipit, justo pulvinar volutpat faucibus, enim nisl molestie urna, quis efficitur lectus ipsum auctor libero. Nullam quis sagittis dui.</p>
+<h4 style="color: #7f8c8d;">Sisältösuunnittelu:</h4>
+
+<p>Mikael Brygger --> <a href="mailto:mikael.brygger@uniarts.fi" style="color: #ffd700;">mikael.brygger@uniarts.fi</a></p>
+<p>Tomi Humalisto --> <a href="mailto:tomi.humalisto@uniarts.fi" style="color: #ffd700;">tomi.humalisto@uniarts.fi</a></p>
+<p>Tomi Slotte Dufva --> <a href="mailto:tomi.slottedufva@aalto.fi" style="color: #ffd700;">tomi.slottedufva@aalto.fi</a></p>
+ 
+<h4 style="color: #7f8c8d;">Tekninen kehitys:</h4> 
+<p>Tiago Martins Pinto --> <a href="mailto:tiago.martinspinto@aalto.fi" style="color: #ffd700;">tiago.martinspinto@aalto.fi</a></p>
