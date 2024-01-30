@@ -481,7 +481,7 @@ img {
     /* position: absolute; or fixed */
     /* bottom: 0; */
     /* margin-bottom: 10px; */
-    width: 25%; /* Adjust as needed */
+    width: 20%; /* Adjust as needed */
     /* height: 25%; Adjust as needed */
     /* max-height: 100%; */
     /* overflow-y: auto; Enables vertical scrolling if needed */
@@ -510,6 +510,7 @@ img {
 
 #playersList {
   list-style: none;
+  text-align: left;
   padding: 0;
   color: black;
   margin-top: 10px;
