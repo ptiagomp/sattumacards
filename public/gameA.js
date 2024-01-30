@@ -219,9 +219,14 @@ function createCard(deck, index, cardIndex) {
 
     // Add click event listener for card flip
     card.addEventListener("click", () => {
-    console.log("Flip event");
-    card.classList.toggle("flip");
-    socket.emit("flipCard", { cardId: card.id });
+      if (cardIndex === 9) {
+        console.log("Flip event");
+        card.classList.toggle("flip");
+        socket.emit("flipCard", { cardId: card.id });
+      } else {
+        // Pop-up message for other cards
+        alert("Vain yksi kortti kierrosta kohden!\nEri kortteja varten paina: Sekoita kortit");
+      }
     });
 
 }
