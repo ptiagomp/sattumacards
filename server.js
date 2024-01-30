@@ -8,6 +8,7 @@ const socketIo = require("socket.io");
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
+const usedCardTexts = {}; // Object to store used texts for each deck
 
 // Serve static files from the public directory
 app.use(express.static("public"));
@@ -53,17 +54,35 @@ function generateCardText(deckIndex) {
   try {
     const filePath = path.join(__dirname, "public/cardstext", deckFiles[deckIndex]);
     const data = fs.readFileSync(filePath, "utf8");
-    const words = data.split("\n");
+    let words = data.split("\n").map(word => word.trim()).filter(word => word);
+
+    // Remove already used texts for this deck
+    if (usedCardTexts[deckIndex]) {
+      words = words.filter(word => !usedCardTexts[deckIndex].includes(word));
+    }
 
     if (words.length > 0) {
-      return words[Math.floor(Math.random() * words.length)].trim();
+      const selectedText = words[Math.floor(Math.random() * words.length)];
+      // Add the selected text to the used texts
+      if (!usedCardTexts[deckIndex]) {
+        usedCardTexts[deckIndex] = [];
+      }
+      usedCardTexts[deckIndex].push(selectedText);
+      return selectedText;
     } else {
-      console.error(`Deck file ${deckFiles[deckIndex]} is empty.`);
-      return "No text available for this card"; // Provide a default message for empty cards
+      console.error(`No more unique texts available for deck ${deckFiles[deckIndex]}.`);
+      return "No unique text available for this card";
     }
   } catch (error) {
     console.error(`Failed to fetch data for deck ${deckIndex}:`, error);
-    return "Error fetching card text"; // Provide a default message for errors
+    return "Error fetching card text";
+  }
+}
+
+function resetUsedCardTexts() {
+  // Call this function when you want to reset the used texts, for example, at the start of a new game
+  for (const key in usedCardTexts) {
+    usedCardTexts[key] = [];
   }
 }
 
@@ -136,8 +155,9 @@ function handleFlipCard(socket, userName, data) {
 }
 
 function handleResetDecks(socket, userName) {
-  // Clear the card texts to ensure new ones are generated
+  // Clear the card texts and used texts to ensure new ones are generated
   cardTexts = {};
+  resetUsedCardTexts(); // Reset used card texts
   io.emit("resetDecks", currentGameId);
   console.log(`Decks reset for all players!`);
 }
