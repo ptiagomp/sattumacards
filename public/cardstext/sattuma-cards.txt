@@ -7,3 +7,4 @@ Opiskelijamäärä muuttuu
 Opetuskieli vaihtuu osittain tai täysin
 Yllätysvieras
 Mustat ruudut
+Jokeri!
