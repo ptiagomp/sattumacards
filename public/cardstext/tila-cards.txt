@@ -1,13 +1,9 @@
 Luokkahuone
 Luentosali
-Hybridi
-Etäkokous
-Linja-auto
-Kahvila
-Laiturinnokka
-Koti
-Työhuone
-Kävely tai muu siirtymä
-Yhteistyötila tai monitilatoimisto
 Metsä
-Parveke tai piha
+Yhteistyötila tai monitilatoimisto
+Julkisen liikenteen väline
+Kahvila
+Kävely tai muu siirtymä 
+Koti 
+Työhuone

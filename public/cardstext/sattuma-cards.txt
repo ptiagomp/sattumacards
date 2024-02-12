@@ -1,21 +1,9 @@
-Etäsovelluksen väärä toiminto päällä
-Kommunikointi ilman puhetta / tekstiä
-Sähkökatko
-Äkillinen sairastuminen
-Presentaatio ei löydy / avaudu
-Opiskelijakato
-Opetuskieli vaihtuu osittain tai täysin
-Käytössä oleva laite tai palvelu toimii väärin
-Mustat ruudut
-Opiskelija provosoituu
-Kuva ei näy näytöllä tai siinä on häiriö
-Viive yhteydessä
+Digitaalinen häiriö tai vika
 Perhe / lemmikit samassa tilassa
-Poliisi saapuu paikalle
-Palohälytys
-Väärinkäsitys
-Yllätysvieras
+Sähkökatko
 Ihana tuoksu tilassa
-Aurinko paistaa
-Kuuluu musiikkia
-Keksitarjoilu
+Opiskelija provosoituu
+Opiskelijamäärä muuttuu
+Opetuskieli vaihtuu osittain tai täysin
+Yllätysvieras
+Mustat ruudut

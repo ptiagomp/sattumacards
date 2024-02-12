@@ -1,18 +1,9 @@
-Puheenvuoron lupaaminen
-Puheenvuoron pyytäminen etänä
+Puheenvuoron antaminen / pyytäminen
+Pysähtyminen
 Toistaminen
 Varioiminen
 Jaksottaminen
 Tauottaminen
-Opetusmuodon vaihteleminen
-Opiskelijan puheen huomioiminen
-Palkitseminen
-Tarinan kertominen
-Pysähtyminen jonkin kysymyksen äärelle
-Ennakkotehtävän antaminen
-Kertauskysymykset
-Kamerakuvalla leikittely
-Opetusmuodon vaihteleminen
 Jakautuminen useaan tilaan tai ryhmään
-Opetustilassa olijat liittyvät myös etäkokoukseen
-Leikin ja pelin hyödyntäminen
+Tarinan kertominen
+Palkitseminen

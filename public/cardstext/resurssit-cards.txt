@@ -1,18 +1,9 @@
-Videokokous
-Pikaviestisovellus
-Oppimisalusta
-Virtuaalisen yhteistyön alusta
-Liitutaulu
-Jaettu dokumentti
-Jaettu esitys
-Useampi opetustila
-Verkkokysely
-Miellekartta
-Generatiivisen tekoälyn sovellus
-Videotallenne
-Useita näyttöjä / kameroita / kaiuttimia
+Etäkokoussovellus
+Generatiivisen tekoälyn sovellus 
+Oppimisalusta 
+Digitaalinen yhteistyöalusta
+Liitutaulu / kyniä / paperia
+Pöytiä / tuoleja / jumppapalloja
 Materiaaleja lähialueilta
-Assistentti avuksi
-Paperia / kyniä
-Pöytiä / tuoleja
-Materiaaleja erilaisista lautapeleistä
+Useampi opetustila
+Oppilaitoksen omistamat materiaalit
