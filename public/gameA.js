@@ -127,7 +127,7 @@ function createDeck(deck, index) {
   console.log(`Starting to create deck at index ${index}.`);
 
   // Create 10 cards with a staggered delay
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 9; i++) {
     // setTimeout(() => {
       createCard(deck, index, i);
       console.log(`Created card ${i} in deck ${index}.`);
@@ -219,7 +219,7 @@ function createCard(deck, index, cardIndex) {
 
     // Add click event listener for card flip
     card.addEventListener("click", () => {
-      if (cardIndex === 9) {
+      if (cardIndex === 8) {
         console.log("Flip event");
         card.classList.toggle("flip");
         socket.emit("flipCard", { cardId: card.id });
