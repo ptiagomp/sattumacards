@@ -1,8 +1,0 @@
-<h4 style="color: #7f8c8d;">Sisältösuunnittelu:</h4>
-
-<p>Mikael Brygger --> <a href="mailto:mikael.brygger@uniarts.fi" style="color: #ffd700;">mikael.brygger@uniarts.fi</a></p>
-<p>Tomi Humalisto --> <a href="mailto:tomi.humalisto@uniarts.fi" style="color: #ffd700;">tomi.humalisto@uniarts.fi</a></p>
-<p>Tomi Slotte Dufva --> <a href="mailto:tomi.slottedufva@aalto.fi" style="color: #ffd700;">tomi.slottedufva@aalto.fi</a></p>
- 
-<h4 style="color: #7f8c8d;">Tekninen kehitys:</h4> 
-<p>Tiago Martins Pinto --> <a href="mailto:tiago.martinspinto@aalto.fi" style="color: #ffd700;">tiago.martinspinto@aalto.fi</a></p>

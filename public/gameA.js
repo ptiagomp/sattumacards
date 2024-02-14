@@ -634,17 +634,17 @@ function bindEventListeners() {
   loadModalContent(
     "instructionsModal",
     "instructionsContent",
-    "./text-instruct/pelinohjeet-game.txt"
+    "./text-instruct/pelinohjeet.txt"
   );
   loadModalContent(
     "historyModal",
     "historyContent",
-    "./text-instruct/viitteethistoria-game.txt"
+    "./text-instruct/lisatietoa.txt"
   );
   loadModalContent(
     "contactsModal",
     "contactsContent",
-    "./text-instruct/yhteystiedot-game.txt"
+    "./text-instruct/yhteystiedot.txt"
   );
 
   console.log("Event listeners bound successfully.");
