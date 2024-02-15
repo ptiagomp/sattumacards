@@ -87,17 +87,17 @@ function bindEventListeners() {
   loadModalContent(
     "instructionsModal",
     "instructionsContent",
-    "./text-instruct/pelinohjeet.txt"
+    "./public/text-instruct/pelinohjeet.txt"
   );
   loadModalContent(
     "historyModal",
     "historyContent",
-    "./text-instruct/lisatietoa.txt"
+    "./public/text-instruct/lisatietoa.txt"
   );
   loadModalContent(
     "contactsModal",
     "contactsContent",
-    "./text-instruct/yhteystiedot.txt"
+    "./public/text-instruct/yhteystiedot.txt"
   );
 }
 
