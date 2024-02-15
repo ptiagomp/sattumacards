@@ -4,15 +4,162 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./imgs/favicon.ico" type="image/x-icon">
-    <title>Sattuma</title>
-    <script type="text/javascript">
-      window.location.href = "http://server.sattuma.com:4000/index.html";
-    </script>
+    <title>Sattuma - nettikorttipeli</title>
+    <meta name="description" content="Online version of the card game Sattuma.">
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
   </head>
+
   <body>
-    <p>
-      If you are not redirected,
-      <a href="http://server.sattuma.com:4000/index.html">click here</a>.
-    </p>
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="menu-content" id="menuContent">
+        <ul>
+          <li onclick="openModal('instructionsModal')">Pelin ohjeet</li>
+          <li onclick="openModal('historyModal')">Lisätietoa</li>
+          <li onclick="openModal('contactsModal')">Yhteystiedot</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Modals for Menu Items -->
+    <div id="instructionsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('instructionsModal')">
+          &times;
+        </span>
+        <h2>//Pelin ohjeet</h2>
+        <p id="instructionsContent">
+          <!-- Instructions content will be loaded here -->
+        </p>
+      </div>
+    </div>
+    <div id="historyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('historyModal')">
+          &times;
+        </span>
+        <h2>//Lisätietoa</h2>
+        <p id="historyContent">
+          <!-- History content will be loaded here -->
+        </p>
+      </div>
+    </div>
+    <div id="contactsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('contactsModal')">
+          &times;
+        </span>
+        <h2>//Yhteystiedot</h2>
+        <p id="contactsContent">
+          <!-- Contacts content will be loaded here -->
+        </p>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <main class="landing-container">
+      <img
+        src="./imgs/sattuma-logo.webp"
+        alt="sattuma logo"
+        class="main-logo"
+      />
+      <img
+        src="./imgs/sattuma-text-img.webp"
+        alt="Sattuma"
+        class="title-image"
+      />
+      <div class="buttons-container">
+        <button class="button-arounder" onclick="navigate('gameA.html')">
+          Pelihuoneeseen
+        </button>
+      </div>
+    </main>
+    <!-- Resolution Warning -->
+    <div id="resolution-warning" style="display: none">
+      <p>
+        Optimoi ikkunan koko: 1200x830 tai suurempi.
+        <br />
+        Säädä ikkunan kokoa, kunnes viesti katoaa.
+      </p>
+      <button
+        style="
+          background-color: #ffd700;
+          color: #1e272e;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+        "
+        onclick="document.getElementById('resolution-warning').style.display='none'"
+      >
+        Sulje
+      </button>
+    </div>
+    <!-- Footer -->
+    <footer class="logo-container">
+      <a href="https://okm.fi/etusivu" target="_blank">
+        <img
+          src="./imgs/opetusjakultur-logo.webp"
+          alt="OpetusjaKultur Logo"
+          class="logo"
+        />
+      </a>
+      <a href="https://www.uniarts.fi/" target="_blank">
+        <img
+          src="./imgs/kuvataide-logo.webp"
+          alt="Kuvataide Logo"
+          class="logo"
+        />
+      </a>
+
+      <a href="https://www.aalto.fi/" target="_blank">
+        <img src="./imgs/aalto-logo.webp" alt="Aalto Logo" class="logo" />
+      </a>
+
+      <a href="https://www.hamk.fi/" target="_blank">
+        <img
+          src="./imgs/hamk-logo.webp"
+          alt="HAMK Logo"
+          class="logo"
+        />
+      </a>
+      <a href="https://www.helsinki.fi/fi" target="_blank">
+        <img
+          src="./imgs/unihelsinki-logo.webp"
+          alt="UniHelsinki Logo"
+          class="logo"
+        />
+      </a>
+      <a href="https://www.jyu.fi/fi" target="_blank">
+        <img
+          src="./imgs/jyvaskyla-logo.webp"
+          alt="UniJyvaskyla Logo"
+          class="logo"
+        />
+      </a>
+
+      <a href="https://www.tuni.fi/" target="_blank">
+        <img
+          src="./imgs/unitampere-logo.webp"
+          alt="UniTampere Logo"
+          class="logo"
+        />
+      </a>
+      <a href="https://www.utu.fi/fi" target="_blank">
+        <img
+          src="./imgs/uniturku-logo.webp"
+          alt="UniTurku Logo"
+          class="logo"
+        />
+      </a>
+    </footer>
+    <!-- Scripts -->
+    <script src="index.js"></script>
   </body>
 </html>
