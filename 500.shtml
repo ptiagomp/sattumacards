@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="fi">
-<head>
-<meta charset="UTF-8">
-<title>500 - Sisäinen palvelinvirhe</title>
-<style>
-    body { font-family: 'Lucida Grande', sans-serif; text-align: center; background-color: #f5f5f5; color: #333; }
-    h1 { color: #a52a2a; }
-    p { font-size: 20px; }
-</style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./public/imgs/favicon.ico" type="image/x-icon">
+    <title>500 - Internal server error!</title>
+    <meta name="description" content="500 - Internal server error - Sattuma!">
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+  </head>
 <body>
-    <h1>500 - Sisäinen palvelinvirhe</h1>
+    <main class="error-pages">
+    <img
+        src="./public/imgs/sattuma-text-img.webp"
+        alt="Sattuma"
+        class="title-image"
+      />
+    <h1>500 - Internal server error!</h1>
     <p>"Kuin odottamaton käännös tarinassa,<br>jokin meni vikaan syvällä koneiston sydämessä."</p>
+</main>
 </body>
 </html>
-

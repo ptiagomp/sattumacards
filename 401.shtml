@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="fi">
-<head>
-<meta charset="UTF-8">
-<title>401 - Valtuutus vaaditaan</title>
-<style>
-    body { font-family: 'Courier New', monospace; text-align: center; background-color: #e6e6e6; color: #333; }
-    h1 { color: #6a5acd; }
-    p { font-size: 20px; }
-</style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./public/imgs/favicon.ico" type="image/x-icon">
+    <title>401 - Authorisation required!</title>
+    <meta name="description" content="401 - Authorisation required - Sattuma!">
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+  </head>
 <body>
-    <h1>401 - Valtuutus vaaditaan</h1>
+    <main class="error-pages">
+    <img
+        src="./public/imgs/sattuma-text-img.webp"
+        alt="Sattuma"
+        class="title-image"
+      />
+    <h1>401 - Authorisation required!</h1>
     <p>"Kuin kohtalon oikku, tämä ovi pysyy suljettuna.<br>Kirjaudu sisään avataksesi."</p>
+</main>
 </body>
 </html>
-

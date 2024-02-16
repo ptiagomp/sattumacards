@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="fi">
-<head>
-<meta charset="UTF-8">
-<title>400 - Huono pyyntö</title>
-<style>
-    body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f0f0; color: #333; }
-    h1 { color: #ff6347; }
-    p { font-size: 20px; }
-</style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./public/imgs/favicon.ico" type="image/x-icon">
+    <title>400 - Bad request!</title>
+    <meta name="description" content="400 - Bad request - Sattuma!">
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+  </head>
 <body>
-    <h1>400 - Huono pyyntö</h1>
+    <main class="error-pages">
+    <img
+        src="./public/imgs/sattuma-text-img.webp"
+        alt="Sattuma"
+        class="title-image"
+      />
+    <h1>400 - Bad request!</h1>
     <p>"Kuin sattuman kauppaa, polkusi johti harhaan.<br>Tarkista ja yritä uudelleen."</p>
+</main>
 </body>
 </html>
