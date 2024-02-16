@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>401 - Valtuutus vaaditaan</title>
+<style>
+    body { font-family: 'Courier New', monospace; text-align: center; background-color: #e6e6e6; color: #333; }
+    h1 { color: #6a5acd; }
+    p { font-size: 20px; }
+</style>
+</head>
+<body>
+    <h1>401 - Valtuutus vaaditaan</h1>
+    <p>"Kuin kohtalon oikku, tämä ovi pysyy suljettuna.<br>Kirjaudu sisään avataksesi."</p>
+</body>
+</html>
+

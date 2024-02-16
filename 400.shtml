@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>400 - Huono pyyntö</title>
+<style>
+    body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f0f0; color: #333; }
+    h1 { color: #ff6347; }
+    p { font-size: 20px; }
+</style>
+</head>
+<body>
+    <h1>400 - Huono pyyntö</h1>
+    <p>"Kuin sattuman kauppaa, polkusi johti harhaan.<br>Tarkista ja yritä uudelleen."</p>
+</body>
+</html>

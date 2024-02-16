@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>404 - Ei löytynyt</title>
+<style>
+    body { font-family: 'Times New Roman', Times, serif; text-align: center; background-color: #f8f8f8; color: #333; }
+    h1 { color: #20b2aa; }
+    p { font-size: 20px; }
+</style>
+</head>
+<body>
+    <h1>404 - Ei löytynyt</h1>
+    <p>"Kuin sattuman varjossa, etsimäsi on piilossa.<br>Palaa takaisin tai jatka etsintää."</p>
+</body>
+</html>
+

@@ -10,17 +10,8 @@ const server = http.createServer(app);
 const io = socketIo(server);
 const usedCardTexts = {}; // Object to store used texts for each deck
 
-
-// Serve index.html from the parent of the public directory
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 // Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Serve static files from the public directory
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // Constants and Global Variables
 const deckFiles = [
