@@ -6,7 +6,25 @@
     <link rel="icon" href="./public/imgs/favicon.ico" type="image/x-icon">
     <title>401 - Authorisation required!</title>
     <meta name="description" content="401 - Authorisation required - Sattuma!">
-    <link rel="stylesheet" href="index.css" />
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          min-height: 100vh; /* Changed to min-height */
+          display: flex;
+          flex-direction: column; /* Ensure content is laid out vertically */
+          justify-content: center;
+          align-items: center;
+          font-family: "Roboto", sans-serif;
+          background: #1e272e;
+        }
+        .error-pages {
+          text-align: center;
+          flex-grow: 1; /* Allows the container to grow and take available space */
+          color: white;
+          opacity: 0.7;
+        }
+      </style>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
