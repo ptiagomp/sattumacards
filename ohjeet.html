@@ -4,51 +4,116 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./public/imgs/favicon.ico" type="image/x-icon">
-    <title>400 - Bad request!</title>
-    <meta name="description" content="400 - Bad request - Sattuma!">
-    <style>
-        body {
-          margin: 0;
-          padding: 0;
-          min-height: 100vh; /* Changed to min-height */
-          display: flex;
-          flex-direction: column; /* Ensure content is laid out vertically */
-          justify-content: center;
-          align-items: center;
-          font-family: "Roboto", sans-serif;
-          background: #1e272e;
-        }
-        .error-pages {
-          text-align: center;
-          flex-grow: 1; /* Allows the container to grow and take available space */
-          color: white;
-          opacity: 0.7;
-        }
-        .title-image {
-        width: 350px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        -webkit-user-drag: none;
-        -khtml-user-drag: none;
-        -moz-user-drag: none;
-        -o-user-drag: none;
-}
-      </style>
+    <title>Sattuma - Pelin ohjeet</title>
+    <meta name="description" content="Rules for the card game Sattuma.">
+    <link rel="stylesheet" href="index.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
     />
   </head>
 <body>
-    <main class="error-pages">
+  <main class="landing-container">
     <img
-        src="./public/imgs/sattuma-text-img.webp"
-        alt="Sattuma"
-        class="title-image"
-      />
-    <h1>Ohjeet</h1>
-    <p>testing!!!!</p>
+      src="./public/imgs/sattuma-text-img.webp"
+      alt="Sattuma"
+      class="title-image"
+    />
+    <div class="buttons-container">
+      <button class="button-arounder" onclick="navigate('https:www.sattuma.com')">
+        www.sattuma.com
+      </button>
+    </div>
+    <h3 style="color: #7f8c8d; font-family: Roboto, sans-serif;">Sattuma - Pelin ohjeet</h3>
+    <p style="color: lightgrey;">Ohessa on kaksi vaihtoehtoa miten verkkopelin kortteja voi pelata. Ideana on, että kukin kortti määrittelee yhdessä muiden pöydälle käännettyjen korttien joukossa kuvitteellista opetustilannetta. Pelaajien tehtävänä on kuvitella ja kuvailla korttien antamien tietojen avulla millainen opetustilanne on ja miten se mahdollisesti etenee tai muuttuu korttien vaihtuessa. Virtuaalinen pelipöytä ja sen kortit näkyvät samanlaisena kaikille peliin kirjautuneille. Pelien tullessa tutuiksi, niiden sääntöjä voi myös muunnella pelaajien tarpeiden mukaan. Pelaajat voivat esimerkiksi sopia, että jokin kortti on ajoittain tai tietyssä tilanteessa tyhjä tai “jokeri”, mikä sallii kortissa lukevan tekstin muuttamisen joksikin muuksi.</p>
+<h4 style="color: #7f8c8d;">PELI A</h4> 
+<p style="color: lightgrey;">Kortit jaetaan kuudesta ylärivin pakasta pelipöydälle. Ensimmäisellä kierroksella jokainen osallistuja kääntää vuorollaan yhden kortin pöydälle ja lukee sen ääneen. Kun pöydässä on kuusi korttia, pelaajat kertovat vuorollaan korttien avulla millainen opetustilanne on kyseessä. Seuraava vuorossa oleva vaihtaa jonkin kortin ja muokkaa tarinaa opetustilanteesta sen mukaisesti. Kierroksia jatketaan sovittu määrä tai korttipakkojen loppumiseen niin että kortit eivät enää vaihdu tai pelaajat eivät pysty muuttamaan tarinaa.</p> 
+<h4 style="color: #7f8c8d;">PELI B</h4> 
+<p style="color: lightgray;">Peliä voi pelata myös niin, että kortit jaetaan kuudesta pakasta pelipöydälle kuten aiemmin, mutta kaikki pelaajat tulkitsevat käännetyt kortit yhdessä. Kun rivi on puhuttu ääneen opetustapahtuman kertomukseksi, joku pelaajista kääntää uuden kortin ja pelaajat kuvittelevat ja kertovat jälleen ääneen sen aiheuttaman muutoksen. Yhdessä kertominen tuottaa aina useita vaihtoehtoja, ja kullakin kierroksella pelaajien pitää sopia, millainen on minkäkin käännetyn korttirivin muodostama opetustapahtuma ja sen yhteinen kertomus.</p>
+<br>
+<br>
+<br>  
 </main>
+  
+  <!-- Resolution Warning -->
+  <div id="resolution-warning" style="display: none">
+    <p>
+      Optimoi ikkunan koko: 1200x830 tai suurempi.
+      <br />
+      Säädä ikkunan kokoa, kunnes viesti katoaa.
+    </p>
+    <button
+      style="
+        background-color: #ffd700;
+        color: #1e272e;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      "
+      onclick="document.getElementById('resolution-warning').style.display='none'"
+    >
+      Sulje
+    </button>
+  </div>
+  <!-- Footer -->
+  <footer class="logo-container">
+    <a href="https://okm.fi/etusivu" target="_blank">
+      <img
+        src="./public/imgs/opetusjakultur-logo.webp"
+        alt="OpetusjaKultur Logo"
+        class="logo"
+      />
+    </a>
+    <a href="https://www.uniarts.fi/" target="_blank">
+      <img
+        src="./public/imgs/kuvataide-logo.webp"
+        alt="Kuvataide Logo"
+        class="logo"
+      />
+    </a>
+
+    <a href="https://www.aalto.fi/" target="_blank">
+      <img src="./public/imgs/aalto-logo.webp" alt="Aalto Logo" class="logo" />
+    </a>
+
+    <a href="https://www.hamk.fi/" target="_blank">
+      <img
+        src="./public/imgs/hamk-logo.webp"
+        alt="HAMK Logo"
+        class="logo"
+      />
+    </a>
+    <a href="https://www.helsinki.fi/fi" target="_blank">
+      <img
+        src="./public/imgs/unihelsinki-logo.webp"
+        alt="UniHelsinki Logo"
+        class="logo"
+      />
+    </a>
+    <a href="https://www.jyu.fi/fi" target="_blank">
+      <img
+        src="./public/imgs/jyvaskyla-logo.webp"
+        alt="UniJyvaskyla Logo"
+        class="logo"
+      />
+    </a>
+
+    <a href="https://www.tuni.fi/" target="_blank">
+      <img
+        src="./public/imgs/unitampere-logo.webp"
+        alt="UniTampere Logo"
+        class="logo"
+      />
+    </a>
+    <a href="https://www.utu.fi/fi" target="_blank">
+      <img
+        src="./public/imgs/uniturku-logo.webp"
+        alt="UniTurku Logo"
+        class="logo"
+      />
+    </a>
+  </footer>
+  <!-- Scripts -->
+  <script src="index.js"></script>
 </body>
 </html>
