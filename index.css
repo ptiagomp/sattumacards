@@ -273,3 +273,10 @@ button {
   color: white;
   opacity: 0.7;
 }
+
+.ohjeet-page{
+  margin-left: 100px;
+  margin-right: 100px;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+}
