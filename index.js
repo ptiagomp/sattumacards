@@ -1,3 +1,12 @@
+window.onload = function() {
+  // Check if the URL contains '/ohjeet'
+  if(window.location.href.indexOf("/ohjeet") > -1) {
+    // If it does, open the instructionsModal
+    openModal('instructionsModal');
+  }
+};
+
+
 // Utility Functions
 function navigate(url) {
   document.body.classList.add("fade-out");
