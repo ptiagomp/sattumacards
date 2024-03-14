@@ -5,5 +5,9 @@
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
 
+# Enable rewrite engine
 RewriteEngine On
+
+# URL Rewriting Rules
+# Redirect "/ohjeet" to "ohjeet.html"
 RewriteRule ^ohjeet/?$ ohjeet.html [NC,L]
