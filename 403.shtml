@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="fi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./public/imgs/favicon.ico" type="image/x-icon">
     <title>403 - Denied!</title>
     <meta name="description" content="403 - Denied - Sattuma!">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <style>
         body {
-          margin: 0;
-          padding: 0;
-          min-height: 100vh; /* Changed to min-height */
-          display: flex;
-          flex-direction: column; /* Ensure content is laid out vertically */
-          justify-content: center;
-          align-items: center;
-          font-family: "Roboto", sans-serif;
-          background: #1e272e;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Roboto", sans-serif;
+            background: #1e272e;
         }
         .error-pages {
-          text-align: center;
-          flex-grow: 1; /* Allows the container to grow and take available space */
-          color: white;
-          opacity: 0.7;
+            text-align: center;
+            flex-grow: 1;
+            color: white;
+            opacity: 0.7;
         }
         .title-image {
-        width: 350px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        -webkit-user-drag: none;
-        -khtml-user-drag: none;
-        -moz-user-drag: none;
-        -o-user-drag: none;
-}
-      </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
-    />
-  </head>
+            width: 350px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+        }
+    </style>
+</head>
 <body>
     <main class="error-pages">
-    <img
-        src="./public/imgs/sattuma-text-img.webp"
-        alt="Sattuma"
-        class="title-image"
-      />
-    <h1>403 - Denied!</h1>
-    <p>"Kuin arvoitus ilman vastausta,<br>tämä polku ei ole tarkoitettu kuljettavaksi."</p>
-</main>
+        <img src="./public/imgs/sattuma-text-img.webp" alt="Sattuma" class="title-image">
+        <h1>403 - Denied!</h1>
+        <p>"Kuin arvoitus ilman vastausta,<br>tämä polku ei ole tarkoitettu kuljettavaksi."</p>
+    </main>
 </body>
 </html>
