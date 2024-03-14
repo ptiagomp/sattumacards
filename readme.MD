@@ -1,4 +1,4 @@
-# Sattuma Digital and Physical car game
+# Sattuma Digital and Physical card game
 
 This online game was developed as part of the Digi ja Taide project, funded by the The Ministry of Education and Culture, Finland - OKM for 2021-2023. It is a collaborative effort between the University of the Arts and Aalto University. The game was designed by Tomi Slotte Dufva, Senior University Lecturer at the Aalto University School of Arts, Design and Architecture, and Professors Mikael Brygger and Tomi Humalisto from the Theatre Academy of the University of the Arts. The game's physical cards, graphic design and functionalities were programmed by Tiago Martins Pinto from Aalto University. The broader project also includes participation from the Universities of Helsinki, Tampere, and Turku, as well as Häme University of Applied Sciences. In addition to the online game, a set of cardboard game cards has been produced, which can be inquired from the creators.
 
