@@ -57,3 +57,11 @@ Any question, suggestion or joke, just send me an email!
 
 Tiago
 [https://www.tiagomartinspinto.com](https://www.tiagomartinspinto.com)
+
+
+## Updates
+
+//11.04.2024//
+ - added responsiveness to ohjeet page
+ - added responsiveness to home page
+ - made unique css to ohjeet page
