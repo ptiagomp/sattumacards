@@ -33,7 +33,7 @@ This game is distributed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-- Tomi Slotte Dufva - [tomi.slotte@aalto.fi](mailto:tomi.slotte@aalto.fi)
+- Tomi Slotte Dufva - [tomi.slottedufva@aalto.fi](mailto:tomi.slottedufva@aalto.fi)
 - Mikael Brygger - [mikael.brygger@uniarts.fi](mailto:mikael.brygger@uniarts.fi)
 - Tomi Humalisto - [tomi.humalisto@uniarts.fi](mailto:tomi.humalisto@uniarts.fi)
 - Tiago Martins Pinto - [tiago.martins@aalto.fi](mailto:tiago.martins@aalto.fi)
@@ -62,6 +62,6 @@ Tiago
 ## Updates
 
 //11.04.2024//
- - added responsiveness to ohjeet page
- - added responsiveness to home page
- - made unique css to ohjeet page
+ - added responsiveness to "ohjeet" page
+ - added responsiveness to "home" page
+ - made unique css to "ohjeet" page
