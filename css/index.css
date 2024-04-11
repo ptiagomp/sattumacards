@@ -83,29 +83,18 @@ button {
 
 /* Logo Container */
 .logo-container {
-  position: relative;
-  width: 100%; /* Ensure full width */
   display: flex;
+  flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
   justify-content: center; /* Center logos horizontally */
-  gap: 20px;
-  opacity: 0.7;
-  margin-top: auto; /* Push to bottom */
-  margin-bottom: 100px;
+  gap: 20px; /* Maintain spacing between logos */
+  margin-top: auto;
+  margin-bottom: 30px; /* Adjusted margin */
 }
 
 .logo {
   height: 40px;
   width: auto;
-}
-
-@media (max-width: 600px) {
-  .logo-container {
-    justify-content: center; /* Centers the logos */
-  }
-
-  .logo {
-    height: 30px; /* Smaller logos for smaller screens */
-  }
+  max-width: 100%; /* Ensure logos don't overflow their container */
 }
 
 /* Burger Menu Styles */
@@ -218,9 +207,9 @@ button {
 
 #resolution-warning {
   position: fixed;
-  bottom: 10%;
-  left: 20%;
-  transform: translateX(-50%);
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%, -50%);
   background-color: #1e272e;
   opacity: 0.8;
   border: 1px solid #888;
@@ -261,22 +250,54 @@ button {
   }
 }
 
+/* @media (max-width: 600px) { */
+/* .logo-container { */
+/* justify-content: center; Centers the logos */
+/* } */
 
-.error-pages {
-  text-align: center;
-  flex-grow: 1; /* Allows the container to grow and take available space */
-  display: flex;
-  flex-direction: column; /* Stack children elements vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  width: 100%; /* Full width */
-  color: white;
-  opacity: 0.7;
+/* .logo { */
+/* height: 30px; /* Smaller logos for smaller screens */
+/* } */
+/* } */
+
+/* Media Queries */
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+  .ohjeet-page {
+    margin: 0 50px;
+  }
+
+  .title-image {
+    width: 300px;
+  }
+
+  .buttons-container button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .logo {
+    height: 30px;
+  }
 }
 
-.ohjeet-page{
-  margin-left: 100px;
-  margin-right: 100px;
-  font-family: "Roboto", sans-serif;
-  text-align: left;
+/* Phone Screens */
+@media (max-width: 480px) {
+  .ohjeet-page {
+    margin: 0 20px;
+  }
+
+  .title-image {
+    width: 250px;
+  }
+
+  .buttons-container button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 20px; /* Further reduce the size for smaller screens */
+  }
 }

@@ -1,0 +1,167 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background: #1e272e;
+  color: lightgrey; /* Default text color */
+}
+
+body.fade-out {
+  animation: fadeOut 2s forwards;
+}
+
+/* Landing Container */
+.landing-container {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.title-image {
+  width: 350px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.buttons-container button {
+  background: #1e272e;
+  border: none;
+  border-left: 1px solid #ffd700;
+  border-right: 1px solid #ffd700;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  transform: translateY(-4px);
+}
+
+.buttons-container button:hover,
+.buttons-container button:focus {
+  background: #ffd700;
+  color: #1e272e;
+}
+
+.button-arounder {
+  font-size: 16px;
+  background: #1e272e;
+  color: #bcbfc1;
+  box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, 0.2);
+  transform: translateY(0);
+  border-radius: 0px;
+  --dur: 0.1s;
+  --delay: 0.1s;
+  --radius: 16px;
+  transition: border-radius var(--dur) var(--delay) ease-out,
+    box-shadow calc(var(--dur) * 4) ease-out,
+    transform calc(var(--dur) * 4) ease-out;
+}
+
+.button-arounder:hover,
+.button-arounder:focus {
+  box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, 0.2);
+  transform: translateY(-4px);
+  background: #ffd700;
+  color: #1e272e;
+  border-radius: var(--radius);
+}
+
+/* Instructions Page */
+.ohjeet-page {
+  margin: 0 100px;
+  text-align: left;
+}
+
+/* Logo Container Adjustments */
+.logo-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+  justify-content: center; /* Center logos horizontally */
+  gap: 20px; /* Maintain spacing between logos */
+  margin-top: auto;
+  margin-bottom: 30px; /* Adjusted margin */
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  max-width: 100%; /* Ensure logos don't overflow their container */
+}
+
+/* Media Queries */
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+  .ohjeet-page {
+    margin: 0 50px;
+  }
+
+  .title-image {
+    width: 300px;
+  }
+
+  .buttons-container button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+}
+
+/* Phone Screens */
+@media (max-width: 480px) {
+  .ohjeet-page {
+    margin: 0 20px;
+  }
+
+  .title-image {
+    width: 250px;
+  }
+
+  .buttons-container button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 20px; /* Further reduce the size for smaller screens */
+  }
+}
+
+/* warning message */
+#resolution-warning {
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%, -50%);
+  background-color: #1e272e;
+  opacity: 0.8;
+  border: 1px solid #888;
+  color: #bcbfc1;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
